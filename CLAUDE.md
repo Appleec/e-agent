@@ -2,16 +2,27 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Framework
+
+E-Agent is a minimal, declarative agent harness for this repository. Read `SOUL.md` first — it is the core identity and the five principles.
+
+- **Agents**: `.claude/agents/` — 8 specialists, invoked via the Agent tool
+- **Skills**: `.claude/skills/` — 15 skills, invoked via the Skill tool
+- **Rules**: `rules/` — layered standards (common → typescript → vue)
+- **Contexts**: `contexts/` — dev / review / research modes
+- **Memory**: `memory/` — persistent progress, decisions, learnings
+
+The framework is fully declarative: Markdown only, no hooks, no runtime scripts.
+
 ## Project
 
-E-Agent workspace — a Node.js project (CommonJS) with TypeScript and Vue 3. Currently in early bootstrapping phase with no application source code yet. This repository primarily contains the ECC rules framework and agent skills.
+E-Agent workspace — a Node.js project (CommonJS) with TypeScript and Vue 3. Currently in early bootstrapping phase with no application source code yet.
 
 ## Current State
 
 - **No source code**: No `.ts`, `.vue`, or `.js` application files exist yet
 - **No build tools configured**: TypeScript, Vite, Vitest, ESLint, and Prettier are planned but not yet installed or configured
-- **Rules framework ready**: The `rules/` directory contains the ECC rules system
-- **Skills installed**: git-workflow and dev-team skills are available in `.claude/skills/`
+- **Framework ready**: E-Agent harness (SOUL.md + agents + skills + rules + contexts + memory) is in place
 
 ## Tech Stack (Planned)
 
@@ -57,76 +68,50 @@ npm run build
 
 ## Rules System
 
-This repo contains an ECC rules framework (`rules/`) that defines layered coding standards. See `rules/README.md` for full documentation.
-
-### Structure
-
-Rules are organized into a **common** layer plus **language-specific** directories:
-
-- **`rules/common/`** — Language-agnostic principles: coding style, testing (TDD, 80% coverage), patterns, security, performance, agent orchestration, git workflow, code review
-- **`rules/typescript/`** — TypeScript/JavaScript extensions (types, immutability, Zod validation)
-- **`rules/vue/`** — Vue 3 extensions (SFC structure, composables, Pinia, vue-query, XSS vectors)
-- Additional language-specific rules available: angular, nuxt, python, golang, web, react-native, swift, php, ruby, arkts
-
-### Installing Rules
-
-**Option 1: Install Script (Recommended)**
-
-```bash
-# Install common + one or more language-specific rule sets
-./install.sh typescript
-./install.sh vue
-./install.sh typescript vue  # Multiple at once
-```
-
-**Option 2: Manual Installation**
-
-```bash
-# Create the ECC rule namespace
-mkdir -p ~/.claude/rules/ecc
-
-# Install common rules (required for all projects)
-cp -r rules/common ~/.claude/rules/ecc/
-
-# Install language-specific rules based on your project's tech stack
-cp -r rules/typescript ~/.claude/rules/ecc/
-cp -r rules/vue ~/.claude/rules/ecc/
-```
-
-For project-local rules:
-
-```bash
-mkdir -p .claude/rules/ecc
-cp -r rules/common .claude/rules/ecc/
-cp -r rules/typescript .claude/rules/ecc/
-```
-
-### Rule Priority
-
-Language-specific rules override common rules where idioms differ. Rules in `rules/common/` that may be overridden are marked with language notes.
+Rules are layered standards under `rules/`: `common/` (language-agnostic) → `typescript/` → `vue/`. Language-specific rules override common rules where idioms differ. See `rules/README.md`.
 
 ## Skills System
 
-Custom skills are installed in `.claude/skills/` and available via the Skill tool:
+15 skills in `.claude/skills/`:
 
-- **git-workflow**: Git workflow patterns, branching strategies, commit conventions, merge vs rebase, conflict resolution
-- **dev-team**: Multi-persona session (PM, Architect, Developer, QA) for collaborative design and planning
+- **Workflow & meta**: e-agent-workflow, dev-team, git-workflow, skill-creator, find-skills, karpathy-guidelines
+- **TDD & quality**: tdd, code-review-checklist, refactor-cleanup
+- **Vue & frontend**: vue-best-practices, frontend-design, agent-browser
+- **TypeScript & security & docs**: typescript-strict, security-checklist, docs-memory
 
-Skills provide deep reference material for specific tasks, while rules define standards and conventions.
+Skills tell you _how_; rules tell you _what_.
 
-## Agent-Driven Workflow
+## Agents
 
-Development follows this pipeline for all features:
+Development follows the core loop (see `SOUL.md` §2). Delegate to the right agent early:
 
-1. **Research first**: `gh search` → primary docs → package registries — prefer existing solutions over new code
-2. **Plan**: use planner agent to generate PRD, architecture, task list
-3. **TDD**: use tdd-guide agent — write tests first, implement, refactor
-4. **Code review**: use code-reviewer agent immediately after writing code
-5. **Commit**: conventional commits format, then open PR
+| Agent | When to use |
+| --- | --- |
+| researcher | Before writing new code — verify facts, find existing solutions |
+| planner | Features / refactors — PRD, architecture, task list |
+| tdd-guide | New features / bug fixes — write failing tests first |
+| implementer | After RED — minimal code to make tests green |
+| code-reviewer | Immediately after writing code |
+| security-reviewer | Before committing sensitive code (auth, payments, user data, DB, crypto) |
+| build-fixer | When typecheck / lint / test fail |
+| memory-keeper | After verify — persist progress, decisions, learnings |
 
-For security-sensitive code (auth, payments, user data, DB queries, crypto), stop and use the security-reviewer agent before committing.
+When delegating: always wait for results and integrate them — never fire-and-forget.
 
-When delegating to agents: always wait for results and integrate them — never fire-and-forget.
+## Contexts
+
+Three modes under `contexts/`. Default is `dev`; switch by reading the target file first:
+
+- `contexts/dev.md` — default, implementing features
+- `contexts/review.md` — code review / PR analysis
+- `contexts/research.md` — fact-checking / dependency lookup
+
+## Memory
+
+Persistent, append-only Markdown under `memory/`:
+
+- **Read**: at session start, read only `memory/progress.md`. Grep `decisions.md` / `learnings.md` on demand — do not load them fully.
+- **Write**: `memory-keeper` is the only writer. `learnings.md` only after verify passes.
 
 ## Key Conventions
 
