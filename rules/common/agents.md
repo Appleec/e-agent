@@ -2,36 +2,27 @@
 
 ## Available Agents
 
-ECC agents ship with the `ecc@ecc` plugin, not in `~/.claude/agents/`.
-They are invoked through the Agent tool with a plugin-scoped `subagent_type`:
-
-```text
-Agent(subagent_type: "ecc:planner", prompt: "...")
-```
+E-Agent agents live in `.claude/agents/` and are invoked through the Agent tool. See `SOUL.md` §4 for the full roster.
 
 | Agent | Purpose | When to Use |
 |-------|---------|-------------|
-| ecc:planner | Implementation planning | Complex features, refactoring |
-| ecc:architect | System design | Architectural decisions |
-| ecc:tdd-guide | Test-driven development | New features, bug fixes |
-| ecc:code-reviewer | Code review | After writing code |
-| ecc:security-reviewer | Security analysis | Before commits |
-| ecc:build-error-resolver | Fix build errors | When build fails |
-| ecc:e2e-runner | E2E testing | Critical user flows |
-| ecc:refactor-cleaner | Dead code cleanup | Code maintenance |
-| ecc:doc-updater | Documentation | Updating docs |
-| ecc:rust-reviewer | Rust code review | Rust projects |
-| ecc:harmonyos-app-resolver | HarmonyOS app development | HarmonyOS/ArkTS projects |
-
-For the full roster of 68 agents, see `/ecc:ecc-guide`.
+| researcher | Verify facts, find existing solutions | Before writing new code |
+| planner | Implementation planning | Complex features, refactoring |
+| tdd-guide | Test-driven development | New features, bug fixes |
+| implementer | Minimal implementation to green | After RED tests |
+| code-reviewer | Code review | After writing code |
+| security-reviewer | Security analysis | Before committing sensitive code |
+| build-fixer | Fix typecheck/lint/test failures | When checks fail |
+| memory-keeper | Persist progress/decisions/learnings | After verify |
 
 ## Immediate Agent Usage
 
 No user prompt needed:
-1. Complex feature requests - Use **ecc:planner** agent
-2. Code just written/modified - Use **ecc:code-reviewer** agent
-3. Bug fix or new feature - Use **ecc:tdd-guide** agent
-4. Architectural decision - Use **ecc:architect** agent
+1. Complex feature requests - Use **planner** agent
+2. Code just written/modified - Use **code-reviewer** agent
+3. Bug fix or new feature - Use **tdd-guide** agent
+4. Verify failures (typecheck/lint/test) - Use **build-fixer** agent
+5. Sensitive code before commit - Use **security-reviewer** agent
 
 ## Parallel Task Execution
 
