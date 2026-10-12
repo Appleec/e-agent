@@ -6,8 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 E-Agent is a minimal, declarative agent harness for this repository. Read `SOUL.md` first — it is the core identity and the five principles.
 
-- **Agents**: `.claude/agents/` — 8 specialists, invoked via the Agent tool
-- **Skills**: `.claude/skills/` — 15 skills, invoked via the Skill tool
+- **Agents**: `agents/` — 8 specialists, invoked via the Agent tool
+- **Skills**: `skills/` — 15 skills, invoked via the Skill tool
 - **Rules**: `rules/` — layered standards (common → typescript → vue)
 - **Contexts**: `contexts/` — dev / review / research modes
 - **Memory**: `memory/` — persistent progress, decisions, learnings
@@ -72,7 +72,7 @@ Rules are layered standards under `rules/`: `common/` (language-agnostic) → `t
 
 ## Skills System
 
-15 skills in `.claude/skills/`:
+15 skills in `skills/`:
 
 - **Workflow & meta**: e-agent-workflow, dev-team, git-workflow, skill-creator, find-skills, karpathy-guidelines
 - **TDD & quality**: tdd, code-review-checklist, refactor-cleanup

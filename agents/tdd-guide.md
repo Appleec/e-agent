@@ -12,7 +12,7 @@ tools: Read, Grep, Glob, Write, Edit, Bash
 
 ## Workflow
 
-1. Read `rules/common/testing.md`, `rules/typescript/testing.md`, and the `tdd` skill (`.claude/skills/tdd/SKILL.md`).
+1. Read `rules/common/testing.md`, `rules/typescript/testing.md`, and the `tdd` skill (`skills/tdd/SKILL.md`).
 2. Write a failing test first (RED) that asserts the expected behavior — using Vitest, and `@vue/test-utils` for components.
 3. Run the test to confirm it fails for the right reason.
 4. Guide the minimal implementation to pass (GREEN); do not over-build.

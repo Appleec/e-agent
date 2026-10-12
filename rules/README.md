@@ -37,7 +37,7 @@ rules/
 ## Rules vs Skills
 
 - **Rules** define standards, conventions, and checklists that apply broadly (e.g., "80% test coverage", "no hardcoded secrets").
-- **Skills** (`.claude/skills/`) provide deep, actionable reference material for specific tasks (e.g., `tdd`, `typescript-strict`, `security-checklist`).
+- **Skills** (`skills/`) provide deep, actionable reference material for specific tasks (e.g., `tdd`, `typescript-strict`, `security-checklist`).
 
 Language-specific rule files reference relevant skills where appropriate. Rules tell you _what_ to do; skills tell you _how_ to do it.
 
@@ -56,7 +56,7 @@ To add support for a new language or domain (e.g., `python/`):
    ```
    > This file extends [common/xxx.md](../common/xxx.md) with <Language> specific content.
    ```
-4. Reference existing skills if available, or create new ones under `.claude/skills/`.
+4. Reference existing skills if available, or create new ones under `skills/`.
 
 ## Rule Priority
 

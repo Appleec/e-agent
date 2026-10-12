@@ -12,7 +12,7 @@ tools: Read, Grep, Glob, Write, Edit
 
 ## Workflow
 
-1. Read `memory/progress.md` (current state) and the `docs-memory` skill (`.claude/skills/docs-memory/SKILL.md`).
+1. Read `memory/progress.md` (current state) and the `docs-memory` skill (`skills/docs-memory/SKILL.md`).
 2. Update `memory/progress.md`: current progress, WIP, next steps.
 3. Archive ADR drafts from `planner` into `memory/decisions.md` using the standard format (date / status / context / decision / consequences).
 4. Append lessons to `memory/learnings.md` — only for work that passed verify.

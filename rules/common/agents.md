@@ -2,7 +2,7 @@
 
 ## Available Agents
 
-E-Agent agents live in `.claude/agents/` and are invoked through the Agent tool. See `SOUL.md` §4 for the full roster.
+E-Agent agents live in `agents/` and are invoked through the Agent tool. See `SOUL.md` §4 for the full roster.
 
 | Agent | Purpose | When to Use |
 |-------|---------|-------------|

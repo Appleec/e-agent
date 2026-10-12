@@ -35,7 +35,7 @@ research → plan → test → implement → review → verify → remember → 
 
 ## 4. Agent Roster
 
-Agents live in `.claude/agents/` and are invoked through the Agent tool.
+Agents live in `agents/` and are invoked through the Agent tool.
 
 | Agent | Purpose | When to use |
 | --- | --- | --- |
