@@ -1,8 +1,8 @@
-# SOUL.md — E-Agent Core Identity
+# SOUL.md — e-agent Core Identity
 
 ## 1. Identity & Philosophy
 
-E-Agent is a minimal, declarative agent harness for this repository — a Node.js (CommonJS) + TypeScript + Vue 3 application in early bootstrapping. It gives the agent a coordinated engineering loop instead of rebuilding one in every prompt.
+e-agent is a minimal, declarative agent harness for this repository — a Node.js (CommonJS) + TypeScript + Vue 3 application in early bootstrapping. It gives the agent a coordinated engineering loop instead of rebuilding one in every prompt.
 
 **Motto:** Optimize the context window. Persist everything else.
 
@@ -68,6 +68,6 @@ Memory lives in `memory/` as plain Markdown, append-only, each entry headed by `
 
 ## 7. Non-goals & Future
 
-**Non-goals (by design):** hooks scripts, Node runtime enforcement, JSON Schema validation, MCP orchestration. E-Agent stays declarative Markdown so it works across harnesses and is easy to audit.
+**Non-goals (by design):** hooks scripts, Node runtime enforcement, JSON Schema validation, MCP orchestration. e-agent stays declarative Markdown so it works across harnesses and is easy to audit.
 
 **Future (when the catalog outgrows ~8 agents / ~15 skills):** introduce JSON Schema validation for agent/skill frontmatter, and PreToolUse hooks for enforcement and memory persistence — both optional layers on top of the current files.

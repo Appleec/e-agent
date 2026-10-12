@@ -1,9 +1,9 @@
 ---
 name: e-agent-workflow
-description: The E-Agent core loop operating manual. Use when starting any feature, bug fix, or refactor to route work through research → plan → test → implement → review → verify → remember → improve, or when unsure which agent to invoke next.
+description: The e-agent core loop operating manual. Use when starting any feature, bug fix, or refactor to route work through research → plan → test → implement → review → verify → remember → improve, or when unsure which agent to invoke next.
 ---
 
-# E-Agent Workflow
+# e-agent Workflow
 
 The core loop that ties the whole framework together. Read `SOUL.md` first for identity and principles; this skill is the operating manual for the loop.
 

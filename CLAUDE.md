@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Framework
 
-E-Agent is a minimal, declarative agent harness for this repository. Read `SOUL.md` first — it is the core identity and the five principles.
+e-agent is a minimal, declarative agent harness for this repository. Read `SOUL.md` first — it is the core identity and the five principles.
 
 - **Agents**: `agents/` — 8 specialists, invoked via the Agent tool
 - **Skills**: `skills/` — 15 skills, invoked via the Skill tool
@@ -16,13 +16,13 @@ The framework is fully declarative: Markdown only, no hooks, no runtime scripts.
 
 ## Project
 
-E-Agent workspace — a Node.js project (CommonJS) with TypeScript and Vue 3. Currently in early bootstrapping phase with no application source code yet.
+e-agent workspace — a Node.js project (CommonJS) with TypeScript and Vue 3. Currently in early bootstrapping phase with no application source code yet.
 
 ## Current State
 
 - **No source code**: No `.ts`, `.vue`, or `.js` application files exist yet
 - **No build tools configured**: TypeScript, Vite, Vitest, ESLint, and Prettier are planned but not yet installed or configured
-- **Framework ready**: E-Agent harness (SOUL.md + agents + skills + rules + contexts + memory) is in place
+- **Framework ready**: e-agent harness (SOUL.md + agents + skills + rules + contexts + memory) is in place
 
 ## Tech Stack (Planned)
 

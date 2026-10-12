@@ -2,8 +2,8 @@
 
 ## Current
 
-- E-Agent framework bootstrapped: SOUL.md, 8 agents, 15 skills, 3 contexts, memory layer.
-- Rules layer in place and localized to E-Agent (`rules/common` + `rules/typescript` + `rules/vue`; ECC references removed).
+- e-agent framework bootstrapped: SOUL.md, 8 agents, 15 skills, 3 contexts, memory layer.
+- Rules layer in place and localized to e-agent (`rules/common` + `rules/typescript` + `rules/vue`; ECC references removed).
 - No application source code yet; no build tools installed.
 
 ## Next
