@@ -12,7 +12,20 @@ e-agent is a minimal, declarative agent harness for this repository. Read `SOUL.
 - **Contexts**: `contexts/` — dev / review / research modes
 - **Memory**: `memory/` — persistent progress, decisions, learnings
 
-The framework is fully declarative: Markdown only, no hooks, no runtime scripts.
+The framework is fully declarative: Markdown plus a plugin manifest — no hooks, no runtime scripts.
+
+### Plugin Installation (local)
+
+The repo doubles as a Claude Code plugin (`.claude-plugin/`). Agents under `agents/` and skills under `skills/` are auto-discovered by convention once installed:
+
+```bash
+claude plugin marketplace add /path/to/e-agent-workspace
+claude plugin install e-agent@e-agent
+```
+
+Installed plugin agents are invoked with the `e-agent:` prefix (e.g. `e-agent:planner`).
+
+Manifest rules (validated the hard way by ECC — see `.claude-plugin/` conventions): `version` is mandatory; `skills` must be an array; never declare `agents` or `hooks` fields — both are auto-loaded by convention and explicit declaration causes validation errors.
 
 ## Project
 

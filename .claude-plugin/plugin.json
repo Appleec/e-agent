@@ -1,0 +1,24 @@
+{
+  "name": "e-agent",
+  "version": "0.1.0",
+  "description": "Minimal declarative agent harness - 8 agents, 15 skills, layered rules, contexts, and append-only memory for TypeScript + Vue 3 development",
+  "author": {
+    "name": "appleex"
+  },
+  "repository": "https://github.com/Appleec/e-agent-workspace",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "agents",
+    "skills",
+    "rules",
+    "tdd",
+    "code-review",
+    "security",
+    "workflow"
+  ],
+  "mcpServers": {},
+  "skills": [
+    "./skills/"
+  ]
+}

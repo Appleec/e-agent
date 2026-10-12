@@ -35,7 +35,7 @@ research → plan → test → implement → review → verify → remember → 
 
 ## 4. Agent Roster
 
-Agents live in `agents/` and are invoked through the Agent tool.
+Agents live in `agents/` and are invoked through the Agent tool. When installed as a Claude Code plugin (`.claude-plugin/`), they are scoped as `e-agent:<name>` (e.g. `e-agent:planner`); the bare name also resolves.
 
 | Agent | Purpose | When to use |
 | --- | --- | --- |

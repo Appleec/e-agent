@@ -2,7 +2,7 @@
 
 ## Available Agents
 
-e-agent agents live in `agents/` and are invoked through the Agent tool. See `SOUL.md` §4 for the full roster.
+e-agent agents live in `agents/` and are invoked through the Agent tool. When the repo is installed as a plugin, agents are scoped as `e-agent:<name>` (e.g. `e-agent:planner`); the bare name also resolves. See `SOUL.md` §4 for the full roster.
 
 | Agent | Purpose | When to Use |
 |-------|---------|-------------|
