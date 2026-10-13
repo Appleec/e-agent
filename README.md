@@ -1,6 +1,6 @@
 # e-agent
 
-A personal, general-purpose agent harness — modeled on [ECC](https://github.com/affaan-m/ECC)'s philosophy, scaled to what you actually need. Language-agnostic core plus pluggable language packs; ships with the **ts-vue pack**.
+A personal, general-purpose agent harness — modeled on [ECC](https://github.com/affaan-m/ECC)'s philosophy, scaled to what you actually need. Language-agnostic core; TypeScript + Vue 3 content included.
 
 > Optimize the context window. Persist everything else.
 
@@ -17,8 +17,8 @@ research → plan → test → implement → review → verify → remember → 
 | Identity & principles | `SOUL.md` | — |
 | Agents | `agents/` | 10 specialists (research → memory) |
 | Skills | `skills/` | 14 |
-| Rules | `rules/` | common core → language packs |
-| Language packs | `LANGUAGE-PACKS.md` | ts-vue installed |
+| Rules | `rules/` | common core → per-stack rules |
+| Language content | `LANGUAGE-PACKS.md` | TypeScript + Vue 3 |
 | Contexts | `contexts/` | dev / review / research |
 | Memory | `memory/` | progress / decisions (ADR) / learnings |
 

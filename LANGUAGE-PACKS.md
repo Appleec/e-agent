@@ -1,10 +1,10 @@
-# Language Packs
+# Language Content
 
-e-agent's core is language-agnostic: the loop (SOUL.md §2), the agents' workflow logic, `rules/common/`, `contexts/`, and `memory/`. Language- and framework-specific assets are grouped into **packs** you add per project.
+e-agent's core is **personal and general-purpose**: the loop (SOUL.md §2), the agents' workflow logic, `rules/common/`, `contexts/`, `memory/`, and the stack-agnostic skills. That core is what you install into any project.
 
-This follows the layered convention inherited from ECC: `rules/common/` defines universal defaults; each pack extends them, and specific overrides general.
+Language- and framework-specific content is **content you grow as needed** — a grouping concept, not an installation unit. Plugin installs are always full-catalog (Claude Code loads every agent/skill in the repo); nothing is truly "plugged in or out". If a future need justifies selective installation, that requires installer infrastructure on the scale ECC built (46 install modules + installer scripts) — explicitly out of scope.
 
-## Installed pack: `ts-vue`
+## Current language content: TypeScript + Vue 3
 
 Serves this repository's stack — TypeScript + Vue 3 + Vite + Pinia + Vitest.
 
@@ -15,7 +15,7 @@ Serves this repository's stack — TypeScript + Vue 3 + Vite + Pinia + Vitest.
 | Skills | `typescript-strict`, `vue-best-practices`, `frontend-design` |
 | Typecheck convention | `vue-tsc --noEmit` (never plain `tsc` for `.vue` files) |
 
-## Adding a pack (e.g. `python`)
+## Adding a language (e.g. `python`)
 
 1. Create `rules/python/` with files that each start with:
    ```
@@ -23,11 +23,11 @@ Serves this repository's stack — TypeScript + Vue 3 + Vite + Pinia + Vitest.
    ```
    Minimum set: `coding-style.md`, `testing.md`, `patterns.md`, `hooks.md`, `security.md`.
 2. If the stack needs a deep how-to skill, add `skills/<name>/SKILL.md` following the function-based naming rule (never brand-prefixed; language suffix is fine, e.g. `python-testing`).
-3. Register the pack in `SOUL.md` §6 and this file.
-4. Pack-specific commands (typecheck/test runners) belong in the pack's rules, not in core agents — core agents say "per the active pack".
+3. Register it in `SOUL.md` §6 and this file.
+4. Stack-specific commands (typecheck/test runners) belong in that stack's rules, not in core agents — core agents say "per the active stack".
 
-## Rules for pack authors
+## Rules for language-content authors
 
-- A pack **extends**, never replaces: core principles (SOUL.md §3) always apply.
+- Language content **extends**, never replaces: core principles (SOUL.md §3) always apply.
 - Core agents stay language-neutral. Language specifics live in rules files and skills the agents point to.
-- Keep packs honest: if the repo has no code for a stack yet (current state), the pack documents the *planned* conventions (see CLAUDE.md "Tech Stack (Planned)").
+- Keep it honest: if the repo has no code for a stack yet (current state), the rules document the *planned* conventions (see CLAUDE.md "Tech Stack (Planned)").

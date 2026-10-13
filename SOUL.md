@@ -2,7 +2,7 @@
 
 ## 1. Identity & Philosophy
 
-e-agent is a personal, general-purpose agent harness: a minimal, declarative core (loop + agents + common rules + memory) plus pluggable language packs. It ships with the **ts-vue pack**, which serves this repository — a Node.js (CommonJS) + TypeScript + Vue 3 application in early bootstrapping. Install e-agent into any project; add or swap language packs per stack.
+e-agent is a **personal, general-purpose agent harness**: a language-agnostic core (loop + agents + common rules + memory) that installs into any project. Language- and framework-specific content is grown per stack as needed — this repository carries **TypeScript + Vue 3** content (see `LANGUAGE-PACKS.md`). Note: plugin installs are full-catalog; language content is a grouping concept, not an installation unit.
 
 It gives the agent a coordinated engineering loop instead of rebuilding one in every prompt.
 
@@ -62,13 +62,13 @@ Three contexts under `contexts/`. `dev` is the default; switch by reading the ta
 | Review | `contexts/review.md` | Code review, PR analysis |
 | Research | `contexts/research.md` | Fact-checking, dependency lookup |
 
-## 6. Language Packs
+## 6. Language Content
 
-The core (loop, agents, `rules/common/`, contexts, memory) is language-agnostic. Language-specific assets form a pack — see `LANGUAGE-PACKS.md` for members and how to add one (e.g. `python`).
+The core (loop, agents, `rules/common/`, contexts, memory) is language-agnostic. Language-specific assets are content grown per stack — see `LANGUAGE-PACKS.md` for current content and how to add a language. Plugin installs are full-catalog; there is no per-stack install granularity.
 
-| Pack | Rules | Skills | Notes |
+| Stack | Rules | Skills | Notes |
 | --- | --- | --- | --- |
-| `ts-vue` (installed) | `rules/typescript/` + `rules/vue/` | `typescript-strict`, `vue-best-practices`, `frontend-design` | Serves this repo's stack |
+| TypeScript + Vue 3 (this repo) | `rules/typescript/` + `rules/vue/` | `typescript-strict`, `vue-best-practices`, `frontend-design` | Serves this repo's stack |
 
 ## 7. Memory Protocol
 

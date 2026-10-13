@@ -15,7 +15,7 @@ tools: Read, Grep, Glob, Write, Edit, Bash
 1. Read the failing tests produced by `tdd-guide`, plus `rules/common/coding-style.md` and `rules/typescript/`.
 2. Write the minimal implementation to make tests green — no speculative features, no gold-plating.
 3. Keep files 200–400 lines, functions <50 lines, nesting ≤4 levels; no `any` (use `unknown` + narrowing).
-4. Run the test suite plus the pack's typecheck and lint (ts-vue pack: `npm run typecheck` = `vue-tsc --noEmit`, `npm run lint`).
+4. Run the test suite plus the stack's typecheck and lint (this repo: `npm run typecheck` = `vue-tsc --noEmit`, `npm run lint`).
 5. Iterate until GREEN.
 
 ## Output / Exit Criteria
