@@ -1,6 +1,6 @@
 {
-  "name": "e-agent-workspace",
-  "version": "0.1.0",
+  "name": "e-agent",
+  "version": "0.1.1",
   "description": "Minimal declarative agent harness - agents, skills, rules, contexts, and memory for TypeScript + Vue 3 development",
   "private": true,
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Appleec/e-agent-workspace.git"
+    "url": "git+https://github.com/Appleec/e-agent.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Appleec/e-agent-workspace/issues"
+    "url": "https://github.com/Appleec/e-agent/issues"
   },
-  "homepage": "https://github.com/Appleec/e-agent-workspace#readme"
+  "homepage": "https://github.com/Appleec/e-agent#readme"
 }

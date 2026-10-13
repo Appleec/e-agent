@@ -26,14 +26,14 @@ Fully declarative: Markdown plus a plugin manifest — no hooks, no runtime scri
 ## Install (Claude Code)
 
 ```bash
-claude plugin marketplace add /path/to/e-agent-workspace
+claude plugin marketplace add /path/to/e-agent
 claude plugin install e-agent@e-agent
 ```
 
 Or from GitHub once published:
 
 ```bash
-claude plugin marketplace add Appleec/e-agent-workspace
+claude plugin marketplace add Appleec/e-agent
 claude plugin install e-agent@e-agent
 ```
 
