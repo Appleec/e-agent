@@ -30,6 +30,7 @@ Examples: monorepo vs polyrepo · ship now vs hold for polish · feature flag vs
 
 | Instead of council | Use |
 | --- | --- |
+| Feature design / proposal review with fixed roles | `dev-team` skill (PM / Architect / Developer / QA) |
 | Verifying whether output is correct | the paired reviewers (`typescript-reviewer` + `vue-reviewer`, both must pass) |
 | Breaking a feature into implementation steps | `planner` agent |
 | Reviewing code for bugs or security | `code-reviewer` / `security-reviewer` agents |
