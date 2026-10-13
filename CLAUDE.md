@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 e-agent is a personal, general-purpose agent harness: a language-agnostic core that installs into any project. Read `SOUL.md` first — it is the core identity and the five principles.
 
-- **Agents**: `agents/` — 12 specialists, invoked via the Agent tool
+- **Agents**: `agents/` — 14 specialists, invoked via the Agent tool
 - **Skills**: `skills/` — 14 skills, invoked via the Skill tool
 - **Rules**: `rules/` — layered standards (common → typescript → vue)
 - **Contexts**: `contexts/` — dev / review / research modes
@@ -105,7 +105,9 @@ Development follows the core loop (see `SOUL.md` §2). Delegate to the right age
 | planner | Features / refactors — PRD, architecture, task list |
 | tdd-guide | New features / bug fixes — write failing tests first |
 | implementer | After RED — minimal code to make tests green |
-| code-reviewer | Immediately after writing code |
+| code-reviewer | Immediately after writing code (general) |
+| typescript-reviewer | TS/JS diffs — type safety, async, Node security |
+| vue-reviewer | `.vue` / Vue ecosystem diffs — reactivity, template security, composables |
 | type-design-analyzer | Deep type reviews — make illegal states unrepresentable |
 | code-simplifier | REFACTOR phase — simplify while preserving behavior exactly |
 | security-reviewer | Before committing sensitive code (auth, payments, user data, DB, crypto) |

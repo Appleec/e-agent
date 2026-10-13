@@ -15,7 +15,7 @@ research → plan → test → implement → review → verify → remember → 
 | Layer | Location | Count |
 | --- | --- | --- |
 | Identity & principles | `SOUL.md` | — |
-| Agents | `agents/` | 12 specialists (research → memory) |
+| Agents | `agents/` | 14 specialists (research → memory) |
 | Skills | `skills/` | 14 |
 | Rules | `rules/` | common → language dirs |
 | Contexts | `contexts/` | dev / review / research |

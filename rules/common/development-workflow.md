@@ -34,6 +34,7 @@ The Feature Implementation Workflow describes the development pipeline: research
 
 4. **Code Review**
    - Use **code-reviewer** agent immediately after writing code
+   - For TS/JS diffs, invoke **typescript-reviewer**; for `.vue` / Vue ecosystem diffs, invoke **typescript-reviewer** and **vue-reviewer** in parallel (split lanes — see `agents/vue-reviewer.md` scope table)
    - Address CRITICAL and HIGH issues
    - Fix MEDIUM issues when possible
 

@@ -12,6 +12,8 @@ e-agent agents live in `agents/` and are invoked through the Agent tool. When th
 | tdd-guide | Test-driven development | New features, bug fixes |
 | implementer | Minimal implementation to green | After RED tests |
 | code-reviewer | Code review | After writing code |
+| typescript-reviewer | TS/JS review (type safety, async, Node security) | TS/JS diffs |
+| vue-reviewer | Vue review (reactivity, template security, composables) | .vue / Vue ecosystem diffs |
 | type-design-analyzer | Deep type design review | Domain models, API contracts |
 | code-simplifier | Behavior-preserving simplification | REFACTOR phase |
 | security-reviewer | Security analysis | Before committing sensitive code |
