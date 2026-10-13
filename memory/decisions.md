@@ -17,3 +17,11 @@ Append-only. Each entry follows the docs-memory skill format.
 - Context: The framework was provisionally named "E-Agent". The final name is lowercase "e-agent", matching the repository naming style (e-agent-workspace).
 - Decision: All framework docs (SOUL.md, CLAUDE.md, agents, skills, rules, progress) use "e-agent" as the brand name. The workflow skill keeps its `e-agent-workflow` identifier, which was already lowercase.
 - Consequences: Branding is consistent with the repo name. ADR-1 keeps the old "E-Agent" spelling as a historical record and is not edited (append-only protocol).
+
+## ADR-3: Remove the e-agent-workflow skill
+
+- Date: 2026-10-13
+- Status: accepted
+- Context: The e-agent-workflow skill duplicated the core loop already documented in SOUL.md §2 and `rules/common/development-workflow.md` (three sources of truth). No agent referenced it, so its role as the "loop hub" was never exercised. Its name also embedded the brand, which would render as `e-agent:e-agent-workflow` when installed as a plugin.
+- Decision: Delete `skills/e-agent-workflow/`. SOUL.md §2 and `rules/common/development-workflow.md` are the canonical sources for the core loop. Skills must be named for their function, not the brand.
+- Consequences: Skill count is 14. Naming convention going forward: skill names describe the task (e.g. `tdd`, `security-checklist`), never repeat the e-agent brand.
