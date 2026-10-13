@@ -57,3 +57,11 @@ Append-only. Each entry follows the docs-memory skill format.
 - Context: Verified against ECC after ADR-6: ECC's "language packs" are real because installer infrastructure backs them (install-apply.js language args, 46 install modules, 68 scripts) — and that selectivity exists only in copy-install mode. Plugin installs are full-catalog even for ECC. Our LANGUAGE-PACKS.md promised "pluggable" with zero mechanism behind it: a paper abstraction.
 - Decision: Keep the general-purpose repositioning but demote the pack concept: the language-agnostic core is first-class; language-specific rules/skills are content grown per stack (grouping concept, not an installation unit). LANGUAGE-PACKS.md rewritten as "Language Content" — documents current TS+Vue content and how to add a language, states explicitly that installs are full-catalog. All "pluggable/pack" wording removed from SOUL.md, CLAUDE.md, README, manifests, and core agents ("per the active stack" now). Version 0.2.1.
 - Consequences: Honest architecture with no implied install granularity. Adding python later = create rules/python/ + a skill + register in SOUL.md §6 and LANGUAGE-PACKS.md. If selective installation ever becomes a real need, it requires ECC-scale installer infrastructure — explicitly out of scope.
+
+## ADR-8: Remove the LANGUAGE-PACKS.md concept doc; focus on the core
+
+- Date: 2026-10-13
+- Status: accepted
+- Context: ECC has no LANGUAGE-PACKS.md equivalent — its "how to add a language" lives in `rules/README.md` (which we also have, making the doc redundant), and its language directories are plain directories with no dedicated concept layer. After ADR-7 the doc only restated what rules/README.md already says.
+- Decision: Delete `LANGUAGE-PACKS.md` and all "language content/pack" framing from SOUL.md (§6 removed; back to 7 sections), CLAUDE.md, README, and manifests. Keep `rules/typescript/`, `rules/vue/`, and the 3 language skills — they serve this repo and exist as plain directories, exactly like ECC's 22 language dirs. `rules/README.md` remains the single doc for adding languages.
+- Consequences: One less doc to maintain; the framework's stated focus is the general-purpose core. Adding a language later follows `rules/README.md` (create `rules/<lang>/`, optionally a skill) with no registration ceremony. Version 0.2.2.

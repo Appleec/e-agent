@@ -1,7 +1,7 @@
 {
   "name": "e-agent",
-  "version": "0.2.1",
-  "description": "Minimal declarative agent harness - 10 agents, 14 skills, layered rules, contexts, and append-only memory language-agnostic core; TypeScript + Vue 3 content included",
+  "version": "0.2.2",
+  "description": "Minimal declarative agent harness - 10 agents, 14 skills, layered rules, contexts, and append-only memory; language-agnostic core",
   "author": {
     "name": "appleex"
   },

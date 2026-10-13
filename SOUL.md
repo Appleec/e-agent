@@ -2,7 +2,7 @@
 
 ## 1. Identity & Philosophy
 
-e-agent is a **personal, general-purpose agent harness**: a language-agnostic core (loop + agents + common rules + memory) that installs into any project. Language- and framework-specific content is grown per stack as needed — this repository carries **TypeScript + Vue 3** content (see `LANGUAGE-PACKS.md`). Note: plugin installs are full-catalog; language content is a grouping concept, not an installation unit.
+e-agent is a **personal, general-purpose agent harness**: a language-agnostic core — loop, agents, `rules/common/`, contexts, memory — that installs into any project. Per-language rules and skills are plain directories added as needed (`rules/typescript/`, `rules/vue/` for this repo; see `rules/README.md` for how to add more).
 
 It gives the agent a coordinated engineering loop instead of rebuilding one in every prompt.
 
@@ -62,15 +62,7 @@ Three contexts under `contexts/`. `dev` is the default; switch by reading the ta
 | Review | `contexts/review.md` | Code review, PR analysis |
 | Research | `contexts/research.md` | Fact-checking, dependency lookup |
 
-## 6. Language Content
-
-The core (loop, agents, `rules/common/`, contexts, memory) is language-agnostic. Language-specific assets are content grown per stack — see `LANGUAGE-PACKS.md` for current content and how to add a language. Plugin installs are full-catalog; there is no per-stack install granularity.
-
-| Stack | Rules | Skills | Notes |
-| --- | --- | --- | --- |
-| TypeScript + Vue 3 (this repo) | `rules/typescript/` + `rules/vue/` | `typescript-strict`, `vue-best-practices`, `frontend-design` | Serves this repo's stack |
-
-## 7. Memory Protocol
+## 6. Memory Protocol
 
 Memory lives in `memory/` as plain Markdown, append-only, each entry headed by `date / author / status`.
 
@@ -78,7 +70,7 @@ Memory lives in `memory/` as plain Markdown, append-only, each entry headed by `
 - **Write** — `memory-keeper` is the **only writer** of memory. Others read only.
 - **When** — write `progress.md` on task boundaries; write `learnings.md` only after `verify` passes; `planner` drafts ADRs, `memory-keeper` archives them.
 
-## 8. Non-goals & Future
+## 7. Non-goals & Future
 
 **Non-goals (by design):** hooks scripts, Node runtime enforcement, JSON Schema validation, MCP orchestration. e-agent stays declarative Markdown so it works across harnesses and is easy to audit.
 
