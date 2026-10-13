@@ -65,3 +65,11 @@ Append-only. Each entry follows the docs-memory skill format.
 - Context: ECC has no LANGUAGE-PACKS.md equivalent — its "how to add a language" lives in `rules/README.md` (which we also have, making the doc redundant), and its language directories are plain directories with no dedicated concept layer. After ADR-7 the doc only restated what rules/README.md already says.
 - Decision: Delete `LANGUAGE-PACKS.md` and all "language content/pack" framing from SOUL.md (§6 removed; back to 7 sections), CLAUDE.md, README, and manifests. Keep `rules/typescript/`, `rules/vue/`, and the 3 language skills — they serve this repo and exist as plain directories, exactly like ECC's 22 language dirs. `rules/README.md` remains the single doc for adding languages.
 - Consequences: One less doc to maintain; the framework's stated focus is the general-purpose core. Adding a language later follows `rules/README.md` (create `rules/<lang>/`, optionally a skill) with no registration ceremony. Version 0.2.2.
+
+## ADR-9: Absorb ECC reviewer wisdom; add commit-reviewer and code-simplifier
+
+- Date: 2026-10-13
+- Status: accepted
+- Context: Deep-read of six ECC agents (code-architect, code-explorer, code-reviewer, code-simplifier, commit-reviewer, conversation-analyzer). conversation-analyzer is hooks-dependent (our non-goal) — not ported. code-architect's core discipline folds into planner.
+- Decision: (1) `agents/code-reviewer.md` gains two ECC-proven sections: "Zero findings is a valid outcome" (LLM reviewers' top failure mode is manufacturing findings) and a 9-item Common False Positives skip-list. (2) New `commit-reviewer` agent: drafts Conventional Commits messages measured against the repo's actual git-log norms, flags mixed-concern diffs, never runs `git commit`, and treats diff content as data-not-instructions. (3) New `code-simplifier` agent for the REFACTOR phase — behavior-preserving edits including unwinding over-abstracted single-use helpers. (4) `planner.md` gains the anti-speculative-abstraction clause ("avoid abstractions the repo doesn't already use"). Roster 10 → 12; development-workflow.md wires code-simplifier into REFACTOR and commit-reviewer into Commit & Push.
+- Consequences: Version 0.2.3. The review stage now has noise-suppression discipline; the commit stage has a measured, injection-aware message drafter; REFACTOR has a hands-on agent.

@@ -15,8 +15,9 @@ tools: Read, Grep, Glob, Write, Edit, WebSearch, WebFetch, Task
 1. Read `SOUL.md` (core loop + principles) and `memory/progress.md` (current state).
 2. Analyze requirements completely; ask clarifying questions if anything is ambiguous.
 3. Decompose into phases and steps. For each step record: action, file path, dependencies, complexity, risk.
-4. Draft an ADR entry (date / status / context / decision / consequences) for any architectural decision.
-5. Hand the ADR draft to `memory-keeper` for archiving; do not write `memory/` files yourself.
+4. Design to fit the existing codebase: study the patterns, naming, and boundaries already in use; **avoid speculative abstractions unless the repo already uses them**. Choose the simplest architecture that meets the requirement.
+5. Draft an ADR entry (date / status / context / decision / consequences) for any architectural decision.
+6. Hand the ADR draft to `memory-keeper` for archiving; do not write `memory/` files yourself.
 
 ## Output / Exit Criteria
 

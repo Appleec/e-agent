@@ -25,7 +25,7 @@ The Feature Implementation Workflow describes the development pipeline: research
    - Use **tdd-guide** agent
    - Write tests first (RED)
    - Implement to pass tests (GREEN)
-   - Refactor (IMPROVE)
+   - Refactor (IMPROVE) — use **code-simplifier** agent for behavior-preserving simplification
    - Verify 80%+ coverage
 
 3. **Implement**
@@ -43,6 +43,7 @@ The Feature Implementation Workflow describes the development pipeline: research
    - For security-sensitive code (auth, payments, user data, DB queries, crypto), stop and use **security-reviewer** agent before committing
 
 6. **Commit & Push**
+   - Use **commit-reviewer** agent to draft the message from the staged diff (matches the repo's actual history norms; flags mixed-concern diffs that should be split)
    - Detailed commit messages
    - Follow conventional commits format
    - See [git-workflow.md](./git-workflow.md) for commit message format and PR process

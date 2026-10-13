@@ -47,9 +47,11 @@ Agents live in `agents/` and are invoked through the Agent tool. When installed 
 | `tdd-guide` | Write failing tests first | New features, bug fixes |
 | `implementer` | Minimal implementation to make tests green | After RED |
 | `code-reviewer` | Quality, correctness, and convention review | Immediately after writing code |
-| `type-design-analyzer` | Evaluate whether types make illegal states unrepresentable | Deep type reviews of domain models and API contracts (typed stacks; ts-vue pack) |
+| `type-design-analyzer` | Evaluate whether types make illegal states unrepresentable | Deep type reviews of domain models and API contracts (typed stacks) |
+| `code-simplifier` | Simplify code while preserving behavior exactly | REFACTOR phase, after tests are green |
 | `security-reviewer` | Security review of sensitive code | Before committing auth/payment/data/crypto code |
 | `build-fixer` | Repair typecheck / lint / test failures | When checks fail |
+| `commit-reviewer` | Draft/check Conventional Commits messages from the staged diff | Before committing |
 | `memory-keeper` | Persist progress, decisions, and learnings | After verify, at loop end |
 
 ## 5. Context Switching

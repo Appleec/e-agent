@@ -13,8 +13,10 @@ e-agent agents live in `agents/` and are invoked through the Agent tool. When th
 | implementer | Minimal implementation to green | After RED tests |
 | code-reviewer | Code review | After writing code |
 | type-design-analyzer | Deep type design review | Domain models, API contracts |
+| code-simplifier | Behavior-preserving simplification | REFACTOR phase |
 | security-reviewer | Security analysis | Before committing sensitive code |
 | build-fixer | Fix typecheck/lint/test failures | When checks fail |
+| commit-reviewer | Conventional Commits message drafting | Before committing |
 | memory-keeper | Persist progress/decisions/learnings | After verify |
 
 ## Immediate Agent Usage
