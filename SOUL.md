@@ -40,10 +40,12 @@ Agents live in `agents/` and are invoked through the Agent tool. When installed 
 | Agent | Purpose | When to use |
 | --- | --- | --- |
 | `researcher` | Verify facts, find existing solutions, check docs/registries | Before writing anything new |
+| `code-explorer` | Trace execution paths, map architecture layers, find reusable patterns | Taking over unfamiliar code, before large changes |
 | `planner` | Break requirements into PRD / architecture / task list | Features, refactors, architectural changes |
 | `tdd-guide` | Write failing tests first | New features, bug fixes |
 | `implementer` | Minimal implementation to make tests green | After RED |
 | `code-reviewer` | Quality, correctness, and convention review | Immediately after writing code |
+| `type-design-analyzer` | Evaluate whether types make illegal states unrepresentable | Deep type reviews of domain models and API contracts |
 | `security-reviewer` | Security review of sensitive code | Before committing auth/payment/data/crypto code |
 | `build-fixer` | Repair typecheck / lint / test failures | When checks fail |
 | `memory-keeper` | Persist progress, decisions, and learnings | After verify, at loop end |

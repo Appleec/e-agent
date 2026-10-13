@@ -7,10 +7,12 @@ e-agent agents live in `agents/` and are invoked through the Agent tool. When th
 | Agent | Purpose | When to Use |
 |-------|---------|-------------|
 | researcher | Verify facts, find existing solutions | Before writing new code |
+| code-explorer | Map unfamiliar code, trace execution paths | Before large changes |
 | planner | Implementation planning | Complex features, refactoring |
 | tdd-guide | Test-driven development | New features, bug fixes |
 | implementer | Minimal implementation to green | After RED tests |
 | code-reviewer | Code review | After writing code |
+| type-design-analyzer | Deep type design review | Domain models, API contracts |
 | security-reviewer | Security analysis | Before committing sensitive code |
 | build-fixer | Fix typecheck/lint/test failures | When checks fail |
 | memory-keeper | Persist progress/decisions/learnings | After verify |

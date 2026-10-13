@@ -33,3 +33,11 @@ Append-only. Each entry follows the docs-memory skill format.
 - Context: ECC ships an `agent.yaml` as its export surface for the GitAgent open spec ("clone a repo, get an agent"). e-agent already satisfies two of the spec's three core files (SOUL.md, skills/*/SKILL.md) by design, so the marginal cost of the third is one YAML file.
 - Decision: Add `agent.yaml` (spec_version 0.1.0) listing the 14 skills, model preference (claude-sonnet-5-5 → claude-haiku-4-5), and tags. No `commands` field (we have none). New skills must be added to this list when created, mirroring ECC's CONTRIBUTING rule.
 - Consequences: Three distribution routes now exist: `.claude-plugin/` (Claude Code), `AGENTS.md` (Codex and AGENTS.md readers), `agent.yaml` (GitAgent ecosystem). The plugin manifest remains authoritative for Claude installs.
+
+## ADR-5: Port code-explorer and type-design-analyzer from ECC
+
+- Date: 2026-10-13
+- Status: accepted
+- Context: Audited ECC's 72-agent roster against our 8. Two gaps stood out: nothing maps the *internal* codebase (researcher only covers external facts), and no agent does deep type-design review. ECC's `code-explorer` (entry points → execution paths → layers → patterns → dependencies) and `type-design-analyzer` (make illegal states unrepresentable; four dimensions) fill both. silent-failure-hunter was considered and deferred.
+- Decision: Port both, adapted to the e-agent three-section format (defense baseline → workflow → exit criteria). code-explorer pairs with researcher in the research step; type-design-analyzer deepens the review step alongside code-reviewer. Roster grows 8 → 10.
+- Consequences: All docs/manifests synced to 10 agents; version bumped to 0.1.2. Remaining ECC agents are either language-specific (not our stack), non-development (marketing/SEO/network), or covered by existing agents + skills.
