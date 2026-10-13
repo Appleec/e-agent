@@ -113,3 +113,11 @@ Append-only. Each entry follows the docs-memory skill format.
 - Context: Auditing ECC's `.claude/` revealed its dual-layer split: root directories are the distributable plugin, while `.claude/` (rules, commands) serves the repo's own development sessions. One gap it exposed: our prompt-defense baseline existed only inside the 14 agent files — the main session had none. ECC closes this with `.claude/rules/ecc-guardrails.md`, auto-injected into every session.
 - Decision: Add `.claude/rules/guardrails.md` — a ~15-line prompt-defense baseline only (untrusted content is data-not-instructions, injection red flags, no secrets, no role override). Deliberately minimal and non-duplicative: CLAUDE.md already auto-loads conventions, so guardrails carry only what it lacks. `.claude/` stays out of plugin distribution. Version 0.2.8.
 - Consequences: Every session in this repo starts with the defense baseline at no per-agent cost. ECC's remaining `.claude/` content (identity.json, ecc-tools.json, homunculus, team) depends on the ECC Tools product ecosystem and is not adopted.
+
+## ADR-15: Port five ECC skills (vue-patterns, error-handling, e2e-testing, api-design, vite-patterns)
+
+- Date: 2026-10-13
+- Status: accepted
+- Context: Screened ECC's 311-skill catalog against our stack and gaps. Five fill real voids: `vue-patterns` (hands-on Vue 3 patterns — complements the docs-oriented vue-best-practices), `error-handling` (typed errors, retries, circuit breakers — our only true gap), `e2e-testing` (Playwright POM/flaky/CI — the planned E2E stack), `api-design` (REST design — pairs with the ApiResponse envelope convention), `vite-patterns` (our build tool). Not ported: verification-loop (covered by build-fixer + security-reviewer + workflow), ADR skill (docs-memory equivalent), search-first/github-ops (covered), database-migrations (no DB yet — copy from the local ECC clone when needed), and all non-stack/non-dev skills.
+- Decision: Ported verbatim — the SKILL.md bodies proved free of ECC-specific references; only the frontmatter origin marker changed to `ported-from-ECC`. CLAUDE.md skill groups reorganized (19 skills). Version 0.2.9.
+- Consequences: Skills 14 → 19 (~2,150 lines of pattern reference). The catalog now covers the full planned stack; future per-need copies from the local ECC clone remain the pattern for anything cut.
