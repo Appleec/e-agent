@@ -43,9 +43,13 @@ Installed agents are scoped as `e-agent:<name>` (e.g. `e-agent:planner`); skills
 
 This repo follows the [GitAgent](https://gitagent.sh) spec — `agent.yaml` (manifest) + `SOUL.md` (identity) + `skills/*/SKILL.md`. Any GitAgent-compatible tool can clone and run it directly; the Claude Code plugin manifest stays authoritative for Claude installs.
 
-## Tech stack served
+## Language content included
+
+The core is stack-agnostic; this repo happens to ship TypeScript + Vue 3 content (`rules/typescript/`, `rules/vue/`, and the related skills):
 
 TypeScript · Vue 3 (Composition API, `<script setup>`) · Pinia · vue-router · @tanstack/vue-query · Zod · Vitest + @vue/test-utils · Playwright · ESLint + Prettier
+
+Other stacks: add `rules/<lang>/` per `rules/README.md` — no registration ceremony.
 
 ## License
 
