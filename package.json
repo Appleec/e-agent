@@ -1,6 +1,6 @@
 {
   "name": "e-agent",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Minimal declarative agent harness - agents, skills, rules, contexts, and memory; language-agnostic core",
   "private": true,
   "main": "index.js",

@@ -81,3 +81,11 @@ Append-only. Each entry follows the docs-memory skill format.
 - Context: ECC's language-expert reviewers carry high-value checklists (version-aware Vue reactivity pitfalls, `v-html`/`:href` security, TS async traps). Two shapes were possible: absorb the checklists into rules (keeping agents generic) or port both agents with ECC's paired-invocation model. The user chose the paired-agent model (option B).
 - Decision: Port `agents/typescript-reviewer.md` and `agents/vue-reviewer.md` with full checklists adapted to the e-agent format. They keep ECC's lane-split table (types/async/Node → ts-reviewer; reactivity/templates/composables/router/Pinia/SSR → vue-reviewer) and toolchain-first rule (review waits for green typecheck/lint). `.vue` diffs invoke both in parallel; pure `.ts` invokes only ts-reviewer. General code-reviewer remains for non-language concerns. development-workflow.md step 4 wires the pair. This is a deliberate exception to "language knowledge lives in rules, not agents" — recorded here, not generalized.
 - Consequences: Roster 12 → 14; version 0.2.4. Review now has three layers: general (code-reviewer), language (this pair), and depth (type-design-analyzer). When a third stack is added later, decide per-stack whether it needs an agent or rules suffice.
+
+## ADR-11: Absorb ECC's build-error-resolver into the existing build-fixer
+
+- Date: 2026-10-13
+- Status: accepted
+- Context: ECC's `build-error-resolver` has the same mission as our `build-fixer` (get the toolchain green with minimal diffs), so a second agent would be pure duplication. Its increments over ours: a common-error→fix table, an explicit DO/DON'T boundary, a quantified success metric (changed lines < 5% of the affected file — beyond that it's a redesign), quick-recovery commands, and a route-to-other-agents table.
+- Decision: Enhance `agents/build-fixer.md` with those increments instead of adding a new agent. Name stays `build-fixer`; all existing references unchanged. Version 0.2.5.
+- Consequences: Roster stays 14. The verify stage now has a bounded, measurable definition of a minimal fix and knows when to hand off (refactor → code-simplifier, architecture → planner, behavior tests → tdd-guide, security → security-reviewer).
