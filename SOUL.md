@@ -2,7 +2,9 @@
 
 ## 1. Identity & Philosophy
 
-e-agent is a minimal, declarative agent harness for this repository — a Node.js (CommonJS) + TypeScript + Vue 3 application in early bootstrapping. It gives the agent a coordinated engineering loop instead of rebuilding one in every prompt.
+e-agent is a personal, general-purpose agent harness: a minimal, declarative core (loop + agents + common rules + memory) plus pluggable language packs. It ships with the **ts-vue pack**, which serves this repository — a Node.js (CommonJS) + TypeScript + Vue 3 application in early bootstrapping. Install e-agent into any project; add or swap language packs per stack.
+
+It gives the agent a coordinated engineering loop instead of rebuilding one in every prompt.
 
 **Motto:** Optimize the context window. Persist everything else.
 
@@ -45,7 +47,7 @@ Agents live in `agents/` and are invoked through the Agent tool. When installed 
 | `tdd-guide` | Write failing tests first | New features, bug fixes |
 | `implementer` | Minimal implementation to make tests green | After RED |
 | `code-reviewer` | Quality, correctness, and convention review | Immediately after writing code |
-| `type-design-analyzer` | Evaluate whether types make illegal states unrepresentable | Deep type reviews of domain models and API contracts |
+| `type-design-analyzer` | Evaluate whether types make illegal states unrepresentable | Deep type reviews of domain models and API contracts (typed stacks; ts-vue pack) |
 | `security-reviewer` | Security review of sensitive code | Before committing auth/payment/data/crypto code |
 | `build-fixer` | Repair typecheck / lint / test failures | When checks fail |
 | `memory-keeper` | Persist progress, decisions, and learnings | After verify, at loop end |
@@ -60,7 +62,15 @@ Three contexts under `contexts/`. `dev` is the default; switch by reading the ta
 | Review | `contexts/review.md` | Code review, PR analysis |
 | Research | `contexts/research.md` | Fact-checking, dependency lookup |
 
-## 6. Memory Protocol
+## 6. Language Packs
+
+The core (loop, agents, `rules/common/`, contexts, memory) is language-agnostic. Language-specific assets form a pack — see `LANGUAGE-PACKS.md` for members and how to add one (e.g. `python`).
+
+| Pack | Rules | Skills | Notes |
+| --- | --- | --- | --- |
+| `ts-vue` (installed) | `rules/typescript/` + `rules/vue/` | `typescript-strict`, `vue-best-practices`, `frontend-design` | Serves this repo's stack |
+
+## 7. Memory Protocol
 
 Memory lives in `memory/` as plain Markdown, append-only, each entry headed by `date / author / status`.
 
@@ -68,7 +78,7 @@ Memory lives in `memory/` as plain Markdown, append-only, each entry headed by `
 - **Write** — `memory-keeper` is the **only writer** of memory. Others read only.
 - **When** — write `progress.md` on task boundaries; write `learnings.md` only after `verify` passes; `planner` drafts ADRs, `memory-keeper` archives them.
 
-## 7. Non-goals & Future
+## 8. Non-goals & Future
 
 **Non-goals (by design):** hooks scripts, Node runtime enforcement, JSON Schema validation, MCP orchestration. e-agent stays declarative Markdown so it works across harnesses and is easy to audit.
 

@@ -41,3 +41,11 @@ Append-only. Each entry follows the docs-memory skill format.
 - Context: Audited ECC's 72-agent roster against our 8. Two gaps stood out: nothing maps the *internal* codebase (researcher only covers external facts), and no agent does deep type-design review. ECC's `code-explorer` (entry points → execution paths → layers → patterns → dependencies) and `type-design-analyzer` (make illegal states unrepresentable; four dimensions) fill both. silent-failure-hunter was considered and deferred.
 - Decision: Port both, adapted to the e-agent three-section format (defense baseline → workflow → exit criteria). code-explorer pairs with researcher in the research step; type-design-analyzer deepens the review step alongside code-reviewer. Roster grows 8 → 10.
 - Consequences: All docs/manifests synced to 10 agents; version bumped to 0.1.2. Remaining ECC agents are either language-specific (not our stack), non-development (marketing/SEO/network), or covered by existing agents + skills.
+
+## ADR-6: Reposition e-agent as a personal general-purpose harness with pluggable language packs
+
+- Date: 2026-10-13
+- Status: accepted
+- Context: The "TypeScript + Vue 3 only" framing (inherited from the repo's original CLAUDE.md) blocked reuse of ECC's broader assets and made the plugin awkward to install into non-TS projects. Structure was never the problem — rules were already layered (common + language dirs) — only the descriptions and a few hardcoded references locked the stack in.
+- Decision: Two-layer positioning: language-agnostic core (loop, agents' workflow logic, rules/common, contexts, memory) + pluggable language packs. The ts-vue pack (rules/typescript + rules/vue + typescript-strict / vue-best-practices / frontend-design skills) serves this repo. Documented in LANGUAGE-PACKS.md; SOUL.md §6 lists packs; manifests now say "with pluggable language packs (ships with ts-vue)". Core agents softened to "per the active pack" (tdd-guide, implementer). Files stay in place — pack membership is declared, not reorganized (mirrors ECC's flat-skills-plus-naming convention). Version 0.2.0.
+- Consequences: e-agent can be installed into any project; a python pack is added by creating rules/python/ per LANGUAGE-PACKS.md, without touching core. mcp-configs still holds an untrimmed ECC copy — trim deferred, pending a decision on which universal servers to keep.

@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Framework
 
-e-agent is a minimal, declarative agent harness for this repository. Read `SOUL.md` first — it is the core identity and the five principles.
+e-agent is a personal, general-purpose agent harness: a language-agnostic core plus pluggable language packs (see `LANGUAGE-PACKS.md`). This repository is served by the **ts-vue pack**. Read `SOUL.md` first — it is the core identity and the five principles.
 
 - **Agents**: `agents/` — 10 specialists, invoked via the Agent tool
 - **Skills**: `skills/` — 14 skills, invoked via the Skill tool
-- **Rules**: `rules/` — layered standards (common → typescript → vue)
+- **Rules**: `rules/` — layered standards (common → language packs: typescript → vue)
 - **Contexts**: `contexts/` — dev / review / research modes
 - **Memory**: `memory/` — persistent progress, decisions, learnings
 
@@ -81,7 +81,7 @@ npm run build
 
 ## Rules System
 
-Rules are layered standards under `rules/`: `common/` (language-agnostic) → `typescript/` → `vue/`. Language-specific rules override common rules where idioms differ. See `rules/README.md`.
+Rules are layered standards under `rules/`: `common/` (language-agnostic core) → language-pack rules (`typescript/` → `vue/`, the ts-vue pack). Pack rules override common rules where idioms differ. See `rules/README.md` and `LANGUAGE-PACKS.md`.
 
 ## Skills System
 

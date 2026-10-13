@@ -1,7 +1,7 @@
 {
   "name": "e-agent",
-  "version": "0.1.2",
-  "description": "Minimal declarative agent harness - agents, skills, rules, contexts, and memory for TypeScript + Vue 3 development",
+  "version": "0.2.0",
+  "description": "Minimal declarative agent harness - agents, skills, rules, contexts, and memory with pluggable language packs (ships with ts-vue)",
   "private": true,
   "main": "index.js",
   "scripts": {
