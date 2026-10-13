@@ -23,12 +23,20 @@ rules/
 │   ├── patterns.md
 │   ├── hooks.md
 │   └── security.md
-└── vue/             # Vue 3 specific
-    ├── coding-style.md
-    ├── testing.md
-    ├── patterns.md
-    ├── hooks.md
-    └── security.md
+├── vue/             # Vue 3 specific
+│   ├── coding-style.md
+│   ├── testing.md
+│   ├── patterns.md
+│   ├── hooks.md
+│   └── security.md
+├── web/             # Cross-language Web domain (paths include .vue/.tsx/.svelte)
+│   ├── coding-style.md, testing.md, patterns.md, hooks.md, security.md
+│   ├── performance.md
+│   └── design-quality.md
+├── react/           # React specific
+├── python/          # Python specific (+ fastapi.md)
+├── golang/          # Go specific
+└── angular/         # Angular specific
 ```
 
 - **`common/`** contains universal principles — no language-specific code examples.

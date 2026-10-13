@@ -89,7 +89,7 @@ npm run build
 
 ## Rules System
 
-Rules are layered standards under `rules/`: `common/` (language-agnostic) → `typescript/` → `vue/`. Language-specific rules override common rules where idioms differ. See `rules/README.md`.
+Rules are layered standards under `rules/`: `common/` (language-agnostic) plus per-stack/domain directories gated by `paths` frontmatter — they trigger only when matching files are edited. Installed: `typescript/`, `vue/`, `web/` (cross-language web domain), `react/`, `python/`, `golang/`, `angular/`. Specific overrides common where idioms differ. See `rules/README.md`.
 
 ## Skills System
 
