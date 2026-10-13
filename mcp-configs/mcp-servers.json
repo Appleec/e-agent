@@ -27,6 +27,19 @@
       "command": "npx",
       "args": ["-y", "@jiujiang/jishi-mcp-server"],
       "description": "Read and operate JiShi Design (即时设计) canvases — page nodes, selection details, image/SVG export, batch icons, jsDesign API scripts. Prerequisite: the 九匠即时MCP plugin is open in JiShi Design and shows connected (WebSocket port 19999). Pairs with the jishi-mcp skill for tool parameters and workflows."
+    },
+    "postman": {
+      "command": "npx",
+      "args": ["-y", "@postman/postman-mcp-server"],
+      "env": {
+        "POSTMAN_API_KEY": "YOUR_POSTMAN_API_KEY_HERE"
+      },
+      "description": "Postman workspaces, collections, specs, and environments (local server). Use the LOCAL server to test APIs on localhost — the remote server cannot reach your workstation. Add --code (client-code generation from API definitions, pairs with the api-design skill) or --full (100+ tools). API key: Postman Settings → API keys."
+    },
+    "postman-remote": {
+      "type": "http",
+      "url": "https://mcp.postman.com/minimal",
+      "description": "Postman remote MCP. OAuth — no API key needed: claude mcp add --transport http postman-remote https://mcp.postman.com/minimal. Swap /minimal for /code or /mcp (Full). EU region or API-key auth: add an Authorization: Bearer header."
     }
   },
   "_comments": {
