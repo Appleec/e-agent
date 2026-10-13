@@ -89,3 +89,11 @@ Append-only. Each entry follows the docs-memory skill format.
 - Context: ECC's `build-error-resolver` has the same mission as our `build-fixer` (get the toolchain green with minimal diffs), so a second agent would be pure duplication. Its increments over ours: a common-error→fix table, an explicit DO/DON'T boundary, a quantified success metric (changed lines < 5% of the affected file — beyond that it's a redesign), quick-recovery commands, and a route-to-other-agents table.
 - Decision: Enhance `agents/build-fixer.md` with those increments instead of adding a new agent. Name stays `build-fixer`; all existing references unchanged. Version 0.2.5.
 - Consequences: Roster stays 14. The verify stage now has a bounded, measurable definition of a minimal fix and knows when to hand off (refactor → code-simplifier, architecture → planner, behavior tests → tdd-guide, security → security-reviewer).
+
+## ADR-12: Trim mcp-configs from 33 ECC servers to 4
+
+- Date: 2026-10-13
+- Status: accepted
+- Context: `mcp-configs/mcp-servers.json` was a verbatim ECC copy carrying ECC-ecosystem entries (ito-compute, ecc-memory-vault, nexus), MCP memory stores conflicting with our declarative Markdown memory (SOUL §6), duplicates of built-in tools (filesystem, sequential-thinking, web search), wrong-stack servers (Laravel, shadcn/magic, Supabase, ClickHouse), and unused platforms (Vercel, Railway, Cloudflare ×4).
+- Decision: Keep 4 servers that are zero-key or single-PAT and map to our core loop: `context7` (researcher), `chrome-devtools` (frontend debugging; the one ECC activates), `playwright` (planned E2E stack), `github` (git-workflow loop). `_comments` de-ECC'd and points to the local ECC clone for the full 33-server catalog on demand. The menu's job is fast access to what we actually use, not completeness.
+- Consequences: Version 0.2.6. Retrieving a cut server costs one copy from the local ECC clone — acceptable friction that keeps the default surface honest.
