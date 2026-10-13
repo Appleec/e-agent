@@ -63,3 +63,18 @@ For complex problems, use split role sub-agents:
 - Security expert
 - Consistency reviewer
 - Redundancy checker
+
+## Role Orchestration
+
+Pick the role ensemble by scenario — don't improvise a new one each time:
+
+| Scenario | Ensemble | Shape |
+| --- | --- | --- |
+| Ambiguous, high-stakes decision (go/no-go, tradeoffs) | `council` skill | Four voices: Architect (in-context, position first) + Skeptic / Pragmatist / Critic as fresh subagents with no conversation history (anti-anchoring) |
+| Feature design / proposal review | `dev-team` skill | Fixed four roles: PM, Architect, Developer, QA respond in parallel |
+| Code review gatekeeping | `typescript-reviewer` + `vue-reviewer` (parallel) | Split lanes, each issues its own Approve/Block verdict — both must pass |
+| Deep-dive on one concern | single specialist agent | e.g. `security-reviewer` for auth changes, `type-design-analyzer` for domain models |
+| Complex problem analysis | Multi-Perspective (above) | Five lenses as split sub-agents |
+| Everyday feature work | core loop | The 14 specialists stepped through research → plan → test → implement → review → verify → remember |
+
+Rules: external voices in any ensemble get only the question plus compact context, never the full transcript. Never hide disagreement in the synthesis. Persist an ensemble's outcome via `memory-keeper` only when it changes something real.
