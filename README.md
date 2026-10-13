@@ -39,6 +39,10 @@ claude plugin install e-agent@e-agent
 
 Installed agents are scoped as `e-agent:<name>` (e.g. `e-agent:planner`); skills load with the plugin.
 
+## GitAgent compatible
+
+This repo follows the [GitAgent](https://gitagent.sh) spec — `agent.yaml` (manifest) + `SOUL.md` (identity) + `skills/*/SKILL.md`. Any GitAgent-compatible tool can clone and run it directly; the Claude Code plugin manifest stays authoritative for Claude installs.
+
 ## Tech stack served
 
 TypeScript · Vue 3 (Composition API, `<script setup>`) · Pinia · vue-router · @tanstack/vue-query · Zod · Vitest + @vue/test-utils · Playwright · ESLint + Prettier

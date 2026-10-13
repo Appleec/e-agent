@@ -1,0 +1,34 @@
+spec_version: "0.1.0"
+name: e-agent
+version: 0.1.1
+description: "Minimal declarative agent harness for TypeScript + Vue 3 development. GitAgent portability surface: identity (SOUL.md), skills, layered rules, mode contexts, and append-only memory. The Claude Code plugin manifest (.claude-plugin/) remains authoritative for Claude installs."
+author: appleex
+license: MIT
+model:
+  preferred: claude-sonnet-5-5
+  fallback:
+    - claude-haiku-4-5
+skills:
+  - agent-browser
+  - code-review-checklist
+  - dev-team
+  - docs-memory
+  - find-skills
+  - frontend-design
+  - git-workflow
+  - karpathy-guidelines
+  - refactor-cleanup
+  - security-checklist
+  - skill-creator
+  - tdd
+  - typescript-strict
+  - vue-best-practices
+tags:
+  - agent-harness
+  - developer-tools
+  - code-review
+  - testing
+  - security
+  - typescript
+  - vue
+  - gitagent

@@ -25,3 +25,11 @@ Append-only. Each entry follows the docs-memory skill format.
 - Context: The e-agent-workflow skill duplicated the core loop already documented in SOUL.md §2 and `rules/common/development-workflow.md` (three sources of truth). No agent referenced it, so its role as the "loop hub" was never exercised. Its name also embedded the brand, which would render as `e-agent:e-agent-workflow` when installed as a plugin.
 - Decision: Delete `skills/e-agent-workflow/`. SOUL.md §2 and `rules/common/development-workflow.md` are the canonical sources for the core loop. Skills must be named for their function, not the brand.
 - Consequences: Skill count is 14. Naming convention going forward: skill names describe the task (e.g. `tdd`, `security-checklist`), never repeat the e-agent brand.
+
+## ADR-4: Add a GitAgent portability surface (agent.yaml)
+
+- Date: 2026-10-13
+- Status: accepted
+- Context: ECC ships an `agent.yaml` as its export surface for the GitAgent open spec ("clone a repo, get an agent"). e-agent already satisfies two of the spec's three core files (SOUL.md, skills/*/SKILL.md) by design, so the marginal cost of the third is one YAML file.
+- Decision: Add `agent.yaml` (spec_version 0.1.0) listing the 14 skills, model preference (claude-sonnet-5-5 → claude-haiku-4-5), and tags. No `commands` field (we have none). New skills must be added to this list when created, mirroring ECC's CONTRIBUTING rule.
+- Consequences: Three distribution routes now exist: `.claude-plugin/` (Claude Code), `AGENTS.md` (Codex and AGENTS.md readers), `agent.yaml` (GitAgent ecosystem). The plugin manifest remains authoritative for Claude installs.
