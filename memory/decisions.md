@@ -97,3 +97,11 @@ Append-only. Each entry follows the docs-memory skill format.
 - Context: `mcp-configs/mcp-servers.json` was a verbatim ECC copy carrying ECC-ecosystem entries (ito-compute, ecc-memory-vault, nexus), MCP memory stores conflicting with our declarative Markdown memory (SOUL §6), duplicates of built-in tools (filesystem, sequential-thinking, web search), wrong-stack servers (Laravel, shadcn/magic, Supabase, ClickHouse), and unused platforms (Vercel, Railway, Cloudflare ×4).
 - Decision: Keep 4 servers that are zero-key or single-PAT and map to our core loop: `context7` (researcher), `chrome-devtools` (frontend debugging; the one ECC activates), `playwright` (planned E2E stack), `github` (git-workflow loop). `_comments` de-ECC'd and points to the local ECC clone for the full 33-server catalog on demand. The menu's job is fast access to what we actually use, not completeness.
 - Consequences: Version 0.2.6. Retrieving a cut server costs one copy from the local ECC clone — acceptable friction that keeps the default surface honest.
+
+## ADR-13: Activate the project MCP layer (root .mcp.json with chrome-devtools)
+
+- Date: 2026-10-13
+- Status: accepted
+- Context: ECC's three-layer MCP design: activation (root `.mcp.json`, auto-discovered, one zero-key server), menu (`mcp-configs/`), and guard (`"mcpServers": {}` opt-out in plugin.json preventing the root file from being bundled into plugin installs). We had the menu (trimmed, ADR-12) and the guard; only activation was missing.
+- Decision: Port ECC's root `.mcp.json` verbatim — `chrome-devtools` pinned at 1.10.1. Deliberately a single server to honor the context-window discipline. CLAUDE.md documents the layer. Version 0.2.7.
+- Consequences: Every Claude Code session in this repo gets chrome-devtools automatically (no per-user setup). Same-named user-level config is shadowed by the project one. Swapping the active server means editing one file.

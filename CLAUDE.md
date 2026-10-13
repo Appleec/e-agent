@@ -27,6 +27,10 @@ Installed plugin agents are invoked with the `e-agent:` prefix (e.g. `e-agent:pl
 
 Manifest rules (validated the hard way by ECC — see `.claude-plugin/` conventions): `version` is mandatory; `skills` must be an array; never declare `agents` or `hooks` fields — both are auto-loaded by convention and explicit declaration causes validation errors.
 
+### Project MCP
+
+The repo-root `.mcp.json` activates `chrome-devtools` for every session in this project (auto-discovered by Claude Code). It is kept to a single zero-key server on purpose; more servers live in `mcp-configs/mcp-servers.json` — copy what you need. The `"mcpServers": {}` opt-out in `plugin.json` keeps this file from being bundled into plugin installs.
+
 ## Project
 
 e-agent workspace — a Node.js project (CommonJS) with TypeScript and Vue 3. Currently in early bootstrapping phase with no application source code yet.
