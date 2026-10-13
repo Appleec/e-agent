@@ -31,6 +31,10 @@ Manifest rules (validated the hard way by ECC — see `.claude-plugin/` conventi
 
 The repo-root `.mcp.json` activates `chrome-devtools` for every session in this project (auto-discovered by Claude Code). It is kept to a single zero-key server on purpose; more servers live in `mcp-configs/mcp-servers.json` — copy what you need. The `"mcpServers": {}` opt-out in `plugin.json` keeps this file from being bundled into plugin installs.
 
+### Session Guardrails
+
+`.claude/rules/guardrails.md` is auto-injected into every session in this repo (Claude Code project-level rules), giving the main session the prompt-defense baseline that agents already embed. This mirrors ECC's dual-layer split: root directories ship as the plugin; `.claude/` serves local development and stays out of plugin distribution.
+
 ## Project
 
 e-agent workspace — a Node.js project (CommonJS) with TypeScript and Vue 3. Currently in early bootstrapping phase with no application source code yet.

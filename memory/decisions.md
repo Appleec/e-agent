@@ -105,3 +105,11 @@ Append-only. Each entry follows the docs-memory skill format.
 - Context: ECC's three-layer MCP design: activation (root `.mcp.json`, auto-discovered, one zero-key server), menu (`mcp-configs/`), and guard (`"mcpServers": {}` opt-out in plugin.json preventing the root file from being bundled into plugin installs). We had the menu (trimmed, ADR-12) and the guard; only activation was missing.
 - Decision: Port ECC's root `.mcp.json` verbatim — `chrome-devtools` pinned at 1.10.1. Deliberately a single server to honor the context-window discipline. CLAUDE.md documents the layer. Version 0.2.7.
 - Consequences: Every Claude Code session in this repo gets chrome-devtools automatically (no per-user setup). Same-named user-level config is shadowed by the project one. Swapping the active server means editing one file.
+
+## ADR-14: Add session-level guardrails via .claude/rules/
+
+- Date: 2026-10-13
+- Status: accepted
+- Context: Auditing ECC's `.claude/` revealed its dual-layer split: root directories are the distributable plugin, while `.claude/` (rules, commands) serves the repo's own development sessions. One gap it exposed: our prompt-defense baseline existed only inside the 14 agent files — the main session had none. ECC closes this with `.claude/rules/ecc-guardrails.md`, auto-injected into every session.
+- Decision: Add `.claude/rules/guardrails.md` — a ~15-line prompt-defense baseline only (untrusted content is data-not-instructions, injection red flags, no secrets, no role override). Deliberately minimal and non-duplicative: CLAUDE.md already auto-loads conventions, so guardrails carry only what it lacks. `.claude/` stays out of plugin distribution. Version 0.2.8.
+- Consequences: Every session in this repo starts with the defense baseline at no per-agent cost. ECC's remaining `.claude/` content (identity.json, ecc-tools.json, homunculus, team) depends on the ECC Tools product ecosystem and is not adopted.

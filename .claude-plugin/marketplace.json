@@ -11,7 +11,7 @@
       "name": "e-agent",
       "source": "./",
       "description": "Minimal declarative agent harness - 14 agents, 14 skills, layered rules, contexts, and append-only memory; language-agnostic core",
-      "version": "0.2.7",
+      "version": "0.2.8",
       "author": {
         "name": "appleex"
       },
