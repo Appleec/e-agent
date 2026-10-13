@@ -22,6 +22,11 @@
         "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_PAT_HERE"
       },
       "description": "GitHub operations — PRs, issues, repos; completes the git-workflow loop after commit-reviewer."
+    },
+    "jishi-design": {
+      "command": "npx",
+      "args": ["-y", "@jiujiang/jishi-mcp-server"],
+      "description": "Read and operate JiShi Design (即时设计) canvases — page nodes, selection details, image/SVG export, batch icons, jsDesign API scripts. Prerequisite: the 九匠即时MCP plugin is open in JiShi Design and shows connected (WebSocket port 19999). Pairs with the jishi-mcp skill for tool parameters and workflows."
     }
   },
   "_comments": {
