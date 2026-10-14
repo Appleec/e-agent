@@ -25,6 +25,8 @@ claude plugin install e-agent@e-agent
 
 Installed plugin agents are invoked with the `e-agent:` prefix (e.g. `e-agent:planner`).
 
+**Editing agents/skills in this repo does NOT affect sessions until the plugin updates**: sessions load from the plugin cache (`~/.claude/plugins/cache/`), not from these directories. After any change: bump the version in all four manifests (`.claude-plugin/plugin.json`, `marketplace.json`, `package.json`, `agent.yaml`), then run `claude plugin update e-agent@e-agent`, then restart the session. Verify with `claude plugin list` (version must match the repo) and `ls ~/.claude/plugins/cache/e-agent/e-agent/<version>/agents/ | wc -l` (must match the repo count).
+
 Manifest rules (validated the hard way by ECC — see `.claude-plugin/` conventions): `version` is mandatory; `skills` must be an array; never declare `agents` or `hooks` fields — both are auto-loaded by convention and explicit declaration causes validation errors.
 
 ### Project MCP
