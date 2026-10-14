@@ -44,7 +44,7 @@
   },
   "_comments": {
     "usage": "Copy the servers you need into ~/.claude.json (user) or a project-root .mcp.json (shared via git).",
-    "env_vars": "Replace YOUR_*_HERE placeholders with real values; never commit real keys.",
+    "env_vars": "env values are LITERAL (placeholders pass through as-is and even override inherited values). Prefer ${VAR} expansion — e.g. \"${GITHUB_PERSONAL_ACCESS_TOKEN}\" — so keys stay out of files and real values come from your shell environment; or omit the key entirely to inherit it. Never commit real keys.",
     "context_warning": "Keep under 10 MCPs enabled — every server's tool descriptions consume context window.",
     "full_catalog": "The full 33-server catalog (Jira, Confluence, Vercel, Cloudflare, memory stores, etc.) lives in the local ECC clone at everything-claude-code/mcp-configs/ — copy from there on demand."
   }
