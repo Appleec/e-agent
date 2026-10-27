@@ -40,7 +40,7 @@ The Feature Implementation Workflow describes the development pipeline: research
 
 5. **Verify**
    - Run typecheck (`npm run typecheck`), lint (`npm run lint`), and tests (`npm run test`)
-   - If anything fails, use **build-fixer** agent until all green
+   - If anything fails, use **build-error-resolver** agent until all green
    - For security-sensitive code (auth, payments, user data, DB queries, crypto), stop and use **security-reviewer** agent before committing
 
 6. **Commit & Push**

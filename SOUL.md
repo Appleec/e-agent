@@ -23,7 +23,7 @@ research → plan → test → implement → review → verify → remember → 
 | test | `tdd-guide` | `contexts/dev.md` | failing tests (RED) |
 | implement | `implementer` | `contexts/dev.md` | minimal passing code (GREEN) |
 | review | `code-reviewer` | `contexts/review.md` | review findings |
-| verify | `build-fixer` · `security-reviewer` | `contexts/dev.md` | all-green typecheck/lint/test |
+| verify | `build-error-resolver` · `security-reviewer` | `contexts/dev.md` | all-green typecheck/lint/test |
 | remember | `memory-keeper` | `contexts/dev.md` | `memory/` (progress/learnings) |
 | improve | loop back to review | `contexts/review.md` | refactor notes |
 
@@ -52,7 +52,7 @@ Agents live in `agents/` and are invoked through the Agent tool. When installed 
 | `type-design-analyzer` | Evaluate whether types make illegal states unrepresentable | Deep type reviews of domain models and API contracts (typed stacks) |
 | `code-simplifier` | Simplify code while preserving behavior exactly | REFACTOR phase, after tests are green |
 | `security-reviewer` | Security review of sensitive code | Before committing auth/payment/data/crypto code |
-| `build-fixer` | Repair typecheck / lint / test failures | When checks fail |
+| `build-error-resolver` | Repair typecheck / lint / test failures | When checks fail |
 | `commit-reviewer` | Draft/check Conventional Commits messages from the staged diff | Before committing |
 | `memory-keeper` | Persist progress, decisions, and learnings | After verify, at loop end |
 

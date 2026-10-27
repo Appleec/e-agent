@@ -7,7 +7,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 e-agent is a personal, general-purpose agent harness: a language-agnostic core that installs into any project. Read `SOUL.md` first — it is the core identity and the five principles.
 
 - **Agents**: `agents/` — 14 specialists, invoked via the Agent tool
-- **Skills**: `skills/` — 21 skills, invoked via the Skill tool
+- **Skills**: `skills/` — 22 skills, invoked via the Skill tool
+- **Commands**: `commands/` — 2 slash commands (`aside`, `checkpoint`), invoked via `/e-agent:<name>`
 - **Rules**: `rules/` — layered standards (common → typescript → vue)
 - **Contexts**: `contexts/` — dev / review / research modes
 - **Memory**: `memory/` — persistent progress, decisions, learnings
@@ -27,7 +28,7 @@ Installed plugin agents are invoked with the `e-agent:` prefix (e.g. `e-agent:pl
 
 **Editing agents/skills in this repo does NOT affect sessions until the plugin updates**: sessions load from the plugin cache (`~/.claude/plugins/cache/`), not from these directories. After any change: bump the version in all four manifests (`.claude-plugin/plugin.json`, `marketplace.json`, `package.json`, `agent.yaml`), then run `claude plugin update e-agent@e-agent`, then restart the session. Verify with `claude plugin list` (version must match the repo) and `ls ~/.claude/plugins/cache/e-agent/e-agent/<version>/agents/ | wc -l` (must match the repo count).
 
-Manifest rules (validated the hard way by ECC — see `.claude-plugin/` conventions): `version` is mandatory; `skills` must be an array; never declare `agents` or `hooks` fields — both are auto-loaded by convention and explicit declaration causes validation errors.
+Manifest rules (validated the hard way by ECC — see `.claude-plugin/` conventions): `version` is mandatory; `skills` and `commands` must be arrays; never declare `agents` or `hooks` fields — both are auto-loaded by convention and explicit declaration causes validation errors.
 
 ### Project MCP
 
@@ -95,10 +96,10 @@ Rules are layered standards under `rules/`: `common/` (language-agnostic) plus p
 
 ## Skills System
 
-21 skills in `skills/`:
+22 skills in `skills/`:
 
 - **Workflow & meta**: dev-team, council, git-workflow, skill-creator, find-skills, karpathy-guidelines
-- **TDD & quality**: tdd, code-review-checklist, refactor-cleanup, e2e-testing
+- **TDD & quality**: tdd, code-review-checklist, refactor-cleanup, e2e-testing, verification-loop
 - **Vue & frontend**: vue-best-practices, vue-patterns, vite-patterns, frontend-design, agent-browser, jishi-mcp (design-to-code via JiShi Design)
 - **TypeScript & backend**: typescript-strict, error-handling, api-design
 - **Security & docs**: security-checklist, docs-memory
@@ -122,7 +123,7 @@ Development follows the core loop (see `SOUL.md` §2). Delegate to the right age
 | type-design-analyzer | Deep type reviews — make illegal states unrepresentable |
 | code-simplifier | REFACTOR phase — simplify while preserving behavior exactly |
 | security-reviewer | Before committing sensitive code (auth, payments, user data, DB, crypto) |
-| build-fixer | When typecheck / lint / test fail |
+| build-error-resolver | When typecheck / lint / test fail |
 | commit-reviewer | Before committing — draft/check the Conventional Commits message |
 | memory-keeper | After verify — persist progress, decisions, learnings |
 

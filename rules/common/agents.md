@@ -17,7 +17,7 @@ e-agent agents live in `agents/` and are invoked through the Agent tool. When th
 | type-design-analyzer | Deep type design review | Domain models, API contracts |
 | code-simplifier | Behavior-preserving simplification | REFACTOR phase |
 | security-reviewer | Security analysis | Before committing sensitive code |
-| build-fixer | Fix typecheck/lint/test failures | When checks fail |
+| build-error-resolver | Fix typecheck/lint/test failures | When checks fail |
 | commit-reviewer | Conventional Commits message drafting | Before committing |
 | memory-keeper | Persist progress/decisions/learnings | After verify |
 
@@ -27,7 +27,7 @@ No user prompt needed:
 1. Complex feature requests - Use **planner** agent
 2. Code just written/modified - Use **code-reviewer** agent
 3. Bug fix or new feature - Use **tdd-guide** agent
-4. Verify failures (typecheck/lint/test) - Use **build-fixer** agent
+4. Verify failures (typecheck/lint/test) - Use **build-error-resolver** agent
 5. Sensitive code before commit - Use **security-reviewer** agent
 
 ## Parallel Task Execution
