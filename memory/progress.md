@@ -12,7 +12,6 @@
 
 ## Next
 
-- [ ] Handle the still-uncommitted `mcp-configs/mcp-servers.json` change (adds an MCP directory entry; not part of the v0.2.20–v0.2.23 work — origin to be confirmed, already explained to the user separately; now the sole uncommitted file in the working tree)
 - [ ] User re-test of `/e-agent:checkpoint` degradation fix (live since 0.2.21; no record of an actual re-test in a toolchain-less repo)
 - [ ] New session smoke test: invoke `e-agent:planner` to confirm plugin-scoped agents resolve
 - [ ] Bootstrap build tools: TypeScript, Vite, Vitest, ESLint, Prettier (per CLAUDE.md tech stack)
@@ -95,6 +94,10 @@ CLAUDE.md skills 22 → 33 (new Context & utility category); agent.yaml skill li
 ## 2026-10-28 / memory-keeper / done — commit 7f09cb5
 
 The five v0.2.24–v0.2.28 batches committed to develop as `7f09cb5` (60 files, +8695/-56) — a single `feat` commit merging all five versions, following the e8d121c precedent; the message was drafted after a commit-reviewer check. Sole remaining uncommitted file: `mcp-configs/mcp-servers.json` (not from the port work; origin awaiting user confirmation). The "not committed" notes in the v0.2.24–v0.2.28 entries above predate this commit.
+
+## 2026-10-28 / memory-keeper / done — commits 94efe3c / 3f828b2
+
+`mcp-configs/mcp-servers.json` confirmed as keep and committed as `94efe3c` "chore: expand MCP server catalog" (+54 lines: 9 opt-in entries — memory, longhand, filesystem, token-optimizer, firecrawl, sequential-thinking, codescene, laraplugins, evalview — all credential slots as `YOUR_*` placeholders); followed by `3f828b2` "docs: record 7f09cb5 in progress memory". Working tree clean as of `3f828b2` — only the progress.md edits from this memory-keeper pass remain uncommitted, riding along with the next commit by convention.
 
 
 
