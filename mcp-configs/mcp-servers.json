@@ -23,6 +23,60 @@
       },
       "description": "GitHub operations — PRs, issues, repos; completes the git-workflow loop after commit-reviewer."
     },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "description": "Persistent memory across sessions"
+    },
+    "longhand": {
+      "command": "longhand",
+      "args": ["mcp-server"],
+      "description": "Lossless Claude Code session history — indexes raw tool calls, file edits, and thinking blocks from ~/.claude/projects/*.jsonl into local SQLite + ChromaDB before Claude Code rotates them. Complements memory/omega-memory (synthesized) with verbatim recall. Install: pip install longhand && longhand setup"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/your/projects"],
+      "description": "Filesystem operations (set your path)"
+    },
+    "token-optimizer": {
+      "command": "npx",
+      "args": ["-y", "token-optimizer-mcp"],
+      "description": "Token optimization for 95%+ context reduction via content deduplication and compression"
+    },
+    "firecrawl": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "YOUR_FIRECRAWL_KEY_HERE"
+      },
+      "description": "Web scraping and crawling"
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "description": "Chain-of-thought reasoning"
+    },
+    "codescene": {
+      "command": "npx",
+      "args": ["-y", "@codescene/codehealth-mcp"],
+      "env": {
+        "CS_ACCESS_TOKEN": "YOUR_CS_ACCESS_TOKEN_HERE"
+      },
+      "description": "Optional. CodeScene Code Health MCP (community skill: codehealth-mcp). Not enabled by default — copy only if you opt in. Requires your own CS_ACCESS_TOKEN (no bundled credentials). See skills/codehealth-mcp/SKILL.md for data boundaries and failure behavior."
+    },
+    "laraplugins": {
+      "type": "http",
+      "url": "https://laraplugins.io/mcp/plugins",
+      "description": "Laravel plugin discovery — search packages by keyword, health score, Laravel/PHP version compatibility. Use with laravel-plugin-discovery skill."
+    },
+    "evalview": {
+      "command": "python3",
+      "args": ["-m", "evalview", "mcp", "serve"],
+      "env": {
+        "OPENAI_API_KEY": "YOUR_OPENAI_API_KEY_HERE"
+      },
+      "description": "AI agent regression testing — snapshot behavior, detect regressions in tool calls and output quality. 8 tools: create_test, run_snapshot, run_check, list_tests, validate_skill, generate_skill_tests, run_skill_test, generate_visual_report. API key optional — deterministic checks (tool diff, output hash) work without it. Install: pip install \"evalview>=0.5,<1\""
+    },
     "jishi-design": {
       "command": "npx",
       "args": ["-y", "@jiujiang/jishi-mcp-server"],
