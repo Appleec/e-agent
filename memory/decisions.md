@@ -153,3 +153,11 @@ Append-only. Each entry follows the docs-memory skill format.
 - Context: ADR-11 chose to keep the `build-fixer` name while absorbing ECC's `build-error-resolver`. On 2026-10-27 the user asked for naming alignment with ECC so the two `agents/` trees can be compared file by file; marking the provenance of ported components has also become a convention since then (commands and agents both carry "Adapted from ECC" lines), which makes a divergent name a liability rather than a preference.
 - Decision: `git mv agents/build-fixer.md agents/build-error-resolver.md` with the frontmatter `name` synced. All references updated: SOUL.md (core-loop table + Agent Roster), the CLAUDE.md routing table, `rules/common/agents.md` (two places), and `rules/common/development-workflow.md`. Version 0.2.23.
 - Consequences: The invocation name is now `e-agent:build-error-resolver`; the old `build-fixer` no longer resolves. The ECC port-mapping entry `build-error-resolver → build-fixer` is voided — `agents/` and ECC's `agents/` can now be compared 1:1 by filename.
+
+## ADR-20: Restore full ECC build-error-resolver body (supersede ADR-11 compression)
+
+- Date: 2026-10-27
+- Status: accepted
+- Context: ADR-11 compressed ECC's full `build-error-resolver` into a 69-line condensed version. During the 2026-10-27 batch port of ECC agents, the user explicitly chose "replace with the full version", and the file-by-file comparison preference with ECC has been established practice since ADR-19.
+- Decision: `agents/build-error-resolver.md` is restored to the full ECC body (including Diagnostic Commands, Priority Levels, and Quick Recovery), keeping the e-agent compressed Prompt Defense baseline and the provenance line. Effective in v0.2.27.
+- Consequences: ADR-11's compression decision is voided, yet its original intent — absorbing ECC increments — is realized more thoroughly. The <5% diff target and the DO/DON'T boundaries survive inside the full version.

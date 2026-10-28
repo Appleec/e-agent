@@ -20,6 +20,21 @@ e-agent agents live in `agents/` and are invoked through the Agent tool. When th
 | build-error-resolver | Fix typecheck/lint/test failures | When checks fail |
 | commit-reviewer | Conventional Commits message drafting | Before committing |
 | memory-keeper | Persist progress/decisions/learnings | After verify |
+| architect | System design, scalability, trade-offs | Architectural decisions |
+| code-architect | Feature architecture blueprints | Before implementing a sized feature |
+| spec-miner | Extract behavioral specs (OpenSpec) | Brownfield onboarding |
+| silent-failure-hunter | Swallowed errors, bad fallbacks | Error-handling review |
+| pr-test-analyzer | PR test coverage quality | PR review passes |
+| performance-optimizer | Bottlenecks, bundles, memory leaks | Slow code, size regressions |
+| refactor-cleaner | Dead code removal and consolidation | Cleanup phases |
+| python-reviewer | Python review (PEP 8, security) | Python diffs |
+| fastapi-reviewer | FastAPI review (async, DI, Pydantic) | FastAPI apps |
+| e2e-runner | E2E journeys, flaky quarantine | E2E test work |
+| docs-lookup | Library docs via Context7 MCP | Docs/API questions |
+| seo-specialist | Technical SEO audits | Site audits |
+| a11y-architect | WCAG 2.2 accessibility | UI/design system work |
+| agent-evaluator | 5-axis quality scorecard | Post-task assessment |
+| loop-operator | Autonomous loop supervision | Loop stall intervention |
 
 ## Immediate Agent Usage
 

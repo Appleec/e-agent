@@ -6,9 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 e-agent is a personal, general-purpose agent harness: a language-agnostic core that installs into any project. Read `SOUL.md` first — it is the core identity and the five principles.
 
-- **Agents**: `agents/` — 14 specialists, invoked via the Agent tool
-- **Skills**: `skills/` — 22 skills, invoked via the Skill tool
-- **Commands**: `commands/` — 2 slash commands (`aside`, `checkpoint`), invoked via `/e-agent:<name>`
+- **Agents**: `agents/` — 29 specialists, invoked via the Agent tool
+- **Skills**: `skills/` — 33 skills, invoked via the Skill tool
+- **Commands**: `commands/` — 24 slash commands (workflow: `plan`/`plan-prd`/`pr` suite incl. PRP series; review: `code-review`, `review-pr`, `vue-review`, `python-review`; quality: `build-fix`, `refactor-clean`, `checkpoint`; session: `save-session`, `resume-session`; utility: `aside`, `feature-dev`, `learn`, `learn-eval`, `marketing-campaign`, `skill-create`, `update-docs`), invoked via `/e-agent:<name>`
 - **Rules**: `rules/` — layered standards (common → typescript → vue)
 - **Contexts**: `contexts/` — dev / review / research modes
 - **Memory**: `memory/` — persistent progress, decisions, learnings
@@ -96,13 +96,14 @@ Rules are layered standards under `rules/`: `common/` (language-agnostic) plus p
 
 ## Skills System
 
-22 skills in `skills/`:
+33 skills in `skills/`:
 
-- **Workflow & meta**: dev-team, council, git-workflow, skill-creator, find-skills, karpathy-guidelines
-- **TDD & quality**: tdd, code-review-checklist, refactor-cleanup, e2e-testing, verification-loop
-- **Vue & frontend**: vue-best-practices, vue-patterns, vite-patterns, frontend-design, agent-browser, jishi-mcp (design-to-code via JiShi Design)
-- **TypeScript & backend**: typescript-strict, error-handling, api-design
-- **Security & docs**: security-checklist, docs-memory
+- **Workflow & meta**: dev-team, council, git-workflow, skill-creator, find-skills, karpathy-guidelines, search-first
+- **TDD & quality**: tdd, code-review-checklist, refactor-cleanup, e2e-testing, verification-loop, conventional-commit-review, agent-self-evaluation
+- **Vue & frontend**: vue-best-practices, vue-patterns, vite-patterns, frontend-design, agent-browser, jishi-mcp (design-to-code via JiShi Design), ui-to-vue, accessibility, design-system, seo
+- **TypeScript & backend**: typescript-strict, error-handling, api-design, python-patterns, github-ops
+- **Security & docs**: security-checklist, docs-memory, documentation-lookup
+- **Context & utility**: token-budget-advisor
 
 Skills tell you _how_; rules tell you _what_.
 
@@ -126,6 +127,21 @@ Development follows the core loop (see `SOUL.md` §2). Delegate to the right age
 | build-error-resolver | When typecheck / lint / test fail |
 | commit-reviewer | Before committing — draft/check the Conventional Commits message |
 | memory-keeper | After verify — persist progress, decisions, learnings |
+| architect | System design, scalability, trade-off analysis |
+| code-architect | Feature-level architecture blueprints from existing patterns |
+| spec-miner | Brownfield onboarding — extract behavioral specs (OpenSpec) |
+| silent-failure-hunter | Swallowed errors, bad fallbacks, missing propagation |
+| pr-test-analyzer | PR test coverage quality and behavioral gaps |
+| performance-optimizer | Bottlenecks, bundle size, memory leaks |
+| refactor-cleaner | Dead code removal and consolidation |
+| python-reviewer | Python diffs — PEP 8, security, Pythonic idioms |
+| fastapi-reviewer | FastAPI apps — async, DI, Pydantic, OpenAPI |
+| e2e-runner | E2E journeys, flaky quarantine, artifact management |
+| docs-lookup | Library docs via Context7 MCP (opt-in) |
+| seo-specialist | Technical SEO audits, structured data, Core Web Vitals |
+| a11y-architect | WCAG 2.2 accessibility design and audits |
+| agent-evaluator | 5-axis quality scorecard for agent output |
+| loop-operator | Autonomous loop supervision and stall intervention |
 
 When delegating: always wait for results and integrate them — never fire-and-forget.
 

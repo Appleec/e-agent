@@ -55,6 +55,21 @@ Agents live in `agents/` and are invoked through the Agent tool. When installed 
 | `build-error-resolver` | Repair typecheck / lint / test failures | When checks fail |
 | `commit-reviewer` | Draft/check Conventional Commits messages from the staged diff | Before committing |
 | `memory-keeper` | Persist progress, decisions, and learnings | After verify, at loop end |
+| `architect` | System design, scalability, trade-off analysis | Architectural decisions, large refactors |
+| `code-architect` | Feature architecture blueprints from existing patterns | Before implementing a sized feature |
+| `spec-miner` | Extract behavioral specs (OpenSpec) from code | Brownfield onboarding to spec-driven dev |
+| `silent-failure-hunter` | Hunt swallowed errors and bad fallbacks | Reviewing error handling |
+| `pr-test-analyzer` | Review PR test coverage quality | PR review passes |
+| `performance-optimizer` | Bottlenecks, bundles, memory leaks | Slow code, size regressions |
+| `refactor-cleaner` | Dead code removal and consolidation | Cleanup phases |
+| `python-reviewer` | Python review — PEP 8, security, Pythonic | Python diffs |
+| `fastapi-reviewer` | FastAPI review — async, DI, Pydantic | FastAPI apps |
+| `e2e-runner` | E2E journeys, flaky quarantine, artifacts | E2E test creation/maintenance |
+| `docs-lookup` | Library docs via Context7 MCP | "How do I use X" questions |
+| `seo-specialist` | Technical SEO audits | Site audits, schema, Core Web Vitals |
+| `a11y-architect` | WCAG 2.2 accessibility design/audit | UI components, design systems |
+| `agent-evaluator` | 5-axis quality scorecard | Post-task quality assessment |
+| `loop-operator` | Supervise autonomous loops | Loop stall/retry intervention |
 
 ## 5. Context Switching
 

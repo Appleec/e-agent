@@ -1,6 +1,6 @@
 spec_version: "0.1.0"
 name: e-agent
-version: 0.2.23
+version: 0.2.28
 description: "Minimal declarative agent harness with a language-agnostic core. GitAgent portability surface: identity (SOUL.md), skills, layered rules, mode contexts, and append-only memory. The Claude Code plugin manifest (.claude-plugin/) remains authoritative for Claude installs."
 author: appleex
 license: MIT
@@ -10,27 +10,38 @@ model:
     - claude-haiku-4-5
 skills:
   - agent-browser
+  - agent-self-evaluation
   - api-design
+  - accessibility
   - code-review-checklist
+  - conventional-commit-review
   - council
   - dev-team
   - docs-memory
+  - documentation-lookup
+  - design-system
   - e2e-testing
   - error-handling
   - find-skills
+  - github-ops
   - frontend-design
   - git-workflow
   - jishi-mcp
+  - python-patterns
+  - search-first
+  - seo
   - karpathy-guidelines
   - refactor-cleanup
   - security-checklist
   - skill-creator
+  - token-budget-advisor
   - tdd
   - typescript-strict
   - vite-patterns
   - verification-loop
   - vue-best-practices
   - vue-patterns
+  - ui-to-vue
 tags:
   - agent-harness
   - developer-tools
