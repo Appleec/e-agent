@@ -5,15 +5,14 @@
 - e-agent framework bootstrapped: SOUL.md, 29 agents, 33 skills, 24 commands, 3 contexts, memory layer.
 - **Positioning (ADR-6..8)**: personal general-purpose harness — language-agnostic core is the focus. Per-language rules/skills are plain directories (no pack concept, no LANGUAGE-PACKS.md).
 - Rules layer in place and localized to e-agent (`rules/common` + `rules/typescript` + `rules/vue`; ECC references removed).
-- Plugin shipped and **installed locally** (user scope, enabled). Plugin cache updated and verified at **v0.2.28** (updates from 0.2.20 through 0.2.28 all succeeded; cache confirmed with 29 agents, 24 command files, and 33 skills incl. all 11 new at 0.2.28); v0.2.20–v0.2.23 changes committed as `e8d121c` on develop; **v0.2.24–v0.2.28 changes not yet committed**.
+- Plugin shipped and **installed locally** (user scope, enabled). Plugin cache updated and verified at **v0.2.28** (updates from 0.2.20 through 0.2.28 all succeeded; cache confirmed with 29 agents, 24 command files, and 33 skills incl. all 11 new at 0.2.28); v0.2.20–v0.2.23 changes committed as `e8d121c` on develop; v0.2.24–v0.2.28 committed as `7f09cb5` on develop.
 - ECC naming alignment in effect (**ADR-19**): `build-fixer` fully renamed to `build-error-resolver`. Invocation is now `e-agent:build-error-resolver`; the old name no longer resolves (breaking).
 - Repo distribution files in place: README.md, LICENSE (MIT), AGENTS.md (cross-harness), package.json aligned.
 - No application source code yet; no build tools installed.
 
 ## Next
 
-- [ ] Commit v0.2.24–v0.2.28 changes (command ports incl. the 20-command batch, the 16-agent batch port, the 11-skill batch port, manifest bumps, CLAUDE.md / SOUL.md updates) — left in the working tree awaiting user decision, together with the memory/progress.md edits and the mcp-configs item below
-- [ ] Handle the still-uncommitted `mcp-configs/mcp-servers.json` change (adds an MCP directory entry; not part of the v0.2.20–v0.2.23 work — origin to be confirmed, already explained to the user separately)
+- [ ] Handle the still-uncommitted `mcp-configs/mcp-servers.json` change (adds an MCP directory entry; not part of the v0.2.20–v0.2.23 work — origin to be confirmed, already explained to the user separately; now the sole uncommitted file in the working tree)
 - [ ] User re-test of `/e-agent:checkpoint` degradation fix (live since 0.2.21; no record of an actual re-test in a toolchain-less repo)
 - [ ] New session smoke test: invoke `e-agent:planner` to confirm plugin-scoped agents resolve
 - [ ] Bootstrap build tools: TypeScript, Vite, Vitest, ESLint, Prettier (per CLAUDE.md tech stack)
@@ -92,6 +91,11 @@ Adaptations: agent-self-evaluation drops `scripts/evaluate.py` and hook-integrat
 Four agent references restored (skills now in place, returning to original form): a11y-architect → accessibility; agent-evaluator → agent-self-evaluation; seo-specialist → seo (its Reference section had been removed wholesale during the v0.2.27 port — restored now); python-reviewer → python-patterns (coexists with `rules/python/`: skill = pattern library, rules = enforced standard).
 
 CLAUDE.md skills 22 → 33 (new Context & utility category); agent.yaml skill list +11; all four manifests bumped to 0.2.28 (33 skills). Plugin validate + update passed; cache `0.2.28/skills/` confirmed with 33 skills incl. all 11 new. Not committed — accumulating with v0.2.24–v0.2.27 (five batches: 0.2.24–0.2.28), awaiting user decision.
+
+## 2026-10-28 / memory-keeper / done — commit 7f09cb5
+
+The five v0.2.24–v0.2.28 batches committed to develop as `7f09cb5` (60 files, +8695/-56) — a single `feat` commit merging all five versions, following the e8d121c precedent; the message was drafted after a commit-reviewer check. Sole remaining uncommitted file: `mcp-configs/mcp-servers.json` (not from the port work; origin awaiting user confirmation). The "not committed" notes in the v0.2.24–v0.2.28 entries above predate this commit.
+
 
 
 
