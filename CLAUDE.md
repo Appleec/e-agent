@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 e-agent is a personal, general-purpose agent harness: a language-agnostic core that installs into any project. Read `SOUL.md` first — it is the core identity and the five principles.
 
 - **Agents**: `agents/` — 29 specialists, invoked via the Agent tool
-- **Skills**: `skills/` — 34 skills, invoked via the Skill tool
+- **Skills**: `skills/` — 39 skills, invoked via the Skill tool
 - **Commands**: `commands/` — 24 slash commands (workflow: `plan`/`plan-prd`/`pr` suite incl. PRP series; review: `code-review`, `review-pr`, `vue-review`, `python-review`; quality: `build-fix`, `refactor-clean`, `checkpoint`; session: `save-session`, `resume-session`; utility: `aside`, `feature-dev`, `learn`, `learn-eval`, `marketing-campaign`, `skill-create`, `update-docs`), invoked via `/e-agent:<name>`
 - **Rules**: `rules/` — layered standards (common → typescript → vue)
 - **Contexts**: `contexts/` — dev / review / research modes
@@ -96,14 +96,14 @@ Rules are layered standards under `rules/`: `common/` (language-agnostic) plus p
 
 ## Skills System
 
-34 skills in `skills/`:
+39 skills in `skills/`:
 
-- **Workflow & meta**: dev-team, council, git-workflow, skill-creator, find-skills, karpathy-guidelines, search-first, ub-mode
+- **Workflow & meta**: dev-team, council, git-workflow, skill-creator, find-skills, karpathy-guidelines, search-first, ub-mode, inherit-legacy-style, parallel-execution-optimizer
 - **TDD & quality**: tdd, code-review-checklist, refactor-cleanup, e2e-testing, verification-loop, conventional-commit-review, agent-self-evaluation
 - **Vue & frontend**: vue-best-practices, vue-patterns, vite-patterns, frontend-design, agent-browser, jishi-mcp (design-to-code via JiShi Design), ui-to-vue, accessibility, design-system, seo
-- **TypeScript & backend**: typescript-strict, error-handling, api-design, python-patterns, github-ops
-- **Security & docs**: security-checklist, docs-memory, documentation-lookup
-- **Context & utility**: token-budget-advisor
+- **TypeScript & backend**: typescript-strict, error-handling, api-design, python-patterns, github-ops, mcp-server-patterns
+- **Security & docs**: security-checklist, docs-memory, documentation-lookup, mcp-dependency-review
+- **Context & utility**: token-budget-advisor, prompt-caching-strategy
 
 Skills tell you _how_; rules tell you _what_.
 
