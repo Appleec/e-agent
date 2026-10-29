@@ -39,4 +39,4 @@ class Point(NamedTuple):
 
 ## Reference
 
-For comprehensive Python idioms, the local ECC clone (everything-claude-code) ships `skills/python-patterns/`.
+See skill: `python-patterns` for comprehensive Python idioms and patterns.

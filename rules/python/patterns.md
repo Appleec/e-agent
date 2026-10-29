@@ -36,4 +36,4 @@ class CreateUserRequest:
 
 ## Reference
 
-For comprehensive patterns (decorators, concurrency, packaging), the local ECC clone (everything-claude-code) ships `skills/python-patterns/`.
+See skill: `python-patterns` for comprehensive patterns including decorators, concurrency, and package organization.

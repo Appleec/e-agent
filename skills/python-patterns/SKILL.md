@@ -1,11 +1,11 @@
 ---
 name: python-patterns
 description: Pythonic idioms, PEP 8 standards, type hints, and best practices for building robust, efficient, and maintainable Python applications. Use when writing or reviewing Python code and idiomatic structure, typing, or PEP 8 is in question.
+metadata:
+  origin: ported-from-ECC
 ---
 
 # Python Development Patterns
-
-> Adapted from ECC (everything-claude-code) `skills/python-patterns/SKILL.md`, MIT.
 
 Idiomatic Python patterns and best practices for building robust, efficient, and maintainable applications.
 

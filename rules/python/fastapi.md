@@ -55,4 +55,4 @@ Do not create `SessionLocal()` or long-lived clients inside route handlers.
 - Clear `app.dependency_overrides` after tests.
 - Prefer async test clients for async applications.
 
-For FastAPI deep dives, the local ECC clone (everything-claude-code) ships `skills/fastapi-patterns/`.
+See skill: `fastapi-patterns`.

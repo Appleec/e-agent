@@ -35,4 +35,4 @@ def test_database_connection():
 
 ## Reference
 
-For detailed pytest patterns and fixtures, the local ECC clone (everything-claude-code) ships `skills/python-testing/`.
+See skill: `python-testing` for detailed pytest patterns and fixtures.

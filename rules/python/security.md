@@ -27,4 +27,4 @@ api_key = os.environ["OPENAI_API_KEY"]  # Raises KeyError if missing
 
 ## Reference
 
-For Django-specific security, the local ECC clone (everything-claude-code) ships `skills/django-security/` (if applicable).
+See skill: `django-security` for Django-specific security guidelines (if applicable).
