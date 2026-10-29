@@ -94,6 +94,16 @@
       "type": "http",
       "url": "https://mcp.postman.com/minimal",
       "description": "Postman remote MCP. OAuth — no API key needed: claude mcp add --transport http postman-remote https://mcp.postman.com/minimal. Swap /minimal for /code or /mcp (Full). EU region or API-key auth: add an Authorization: Bearer header."
+    },
+    "zai-mcp-server": {
+      "command": "npx",
+      "args": ["-y", "@z_ai/mcp-server"],
+      "env": {
+        "Z_AI_API_KEY": "YOUR_Z_AI_API_KEY_HERE",
+        "Z_AI_MODE": "YOUR_Z_AI_MODE_HERE",
+        "Z_AI_BASE_URL": "YOUR_Z_AI_BASE_URL_HERE"
+      },
+      "description": "Zhipu/Z.AI official vision MCP (analyze_image, ui_to_artifact, OCR, video analysis). OpenAI-compatible: POST {Z_AI_BASE_URL}chat/completions with Bearer auth — works with relay stations that proxy the Zhipu /paas/v4 API. Omit Z_AI_MODE when setting Z_AI_BASE_URL: Z_AI_MODE force-overrides the base URL to the official endpoint (build/core/environment.js). Base URL MUST end with '/' (path is string-concatenated). Default model glm-5.3-flash, override via Z_AI_VISION_MODEL. Key values containing 'api' or 'key' (lowercased) are rejected as placeholders."
     }
   },
   "_comments": {
