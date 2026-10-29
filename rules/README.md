@@ -34,6 +34,8 @@ rules/
 │   ├── performance.md
 │   └── design-quality.md
 ├── react/           # React specific
+├── react-native/    # React Native / Expo specific (+ accessibility.md, performance.md, production-readiness.md)
+├── nuxt/            # Nuxt specific (SSR, data fetching, Nitro)
 ├── python/          # Python specific (+ fastapi.md)
 ├── golang/          # Go specific
 └── angular/         # Angular specific
