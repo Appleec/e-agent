@@ -1,6 +1,6 @@
 spec_version: "0.1.0"
 name: e-agent
-version: 0.2.37
+version: 0.2.38
 description: "Minimal declarative agent harness with a language-agnostic core. GitAgent portability surface: identity (SOUL.md), skills, layered rules, mode contexts, and append-only memory. The Claude Code plugin manifest (.claude-plugin/) remains authoritative for Claude installs."
 author: appleex
 license: MIT
@@ -11,6 +11,7 @@ model:
 skills:
   - agent-browser
   - agent-self-evaluation
+  - angular-developer
   - api-design
   - accessibility
   - code-review-checklist
@@ -24,9 +25,12 @@ skills:
   - error-handling
   - fastapi-patterns
   - find-skills
+  - frontend-patterns
   - github-ops
   - frontend-design
   - git-workflow
+  - golang-patterns
+  - golang-testing
   - inherit-legacy-style
   - jishi-mcp
   - mcp-dependency-review

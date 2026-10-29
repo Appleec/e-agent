@@ -161,4 +161,4 @@ Target ≥80% for services and pipes. Components: test behaviour, not implementa
 
 ## Skill Reference
 
-For comprehensive testing patterns, harness usage, and async best practices, the local ECC clone (everything-claude-code) ships `skills/angular-developer/`.
+See skill: `angular-developer` for comprehensive testing patterns, harness usage, and async best practices.

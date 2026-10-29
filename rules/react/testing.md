@@ -205,4 +205,4 @@ For those, use Playwright Component Testing or end-to-end Playwright/Cypress run
 
 ## Skill Reference
 
-For end-to-end examples, MSW patterns, and accessibility test scaffolding, the local ECC clone (everything-claude-code) ships `skills/react-testing/`.
+See `skills/react-testing/SKILL.md` for end-to-end test examples, MSW patterns, and accessibility test scaffolding.

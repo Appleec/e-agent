@@ -28,4 +28,4 @@ go test -cover ./...
 
 ## Reference
 
-For detailed Go testing patterns, the local ECC clone (everything-claude-code) ships `skills/golang-testing/`.
+See skill: `golang-testing` for detailed Go testing patterns and helpers.

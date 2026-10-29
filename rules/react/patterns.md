@@ -191,4 +191,4 @@ Older codebases on React 18 still need `forwardRef`.
 
 ## Skill Reference
 
-For deeper reference material, the local ECC clone (everything-claude-code) ships `skills/react-patterns/`, `skills/frontend-patterns/`, and `skills/accessibility/` — copy from there when needed.
+For React-specific deep dives see `skills/react-patterns/SKILL.md`. For cross-framework frontend concerns see `skills/frontend-patterns/SKILL.md`. For accessibility see `skills/accessibility/SKILL.md`.

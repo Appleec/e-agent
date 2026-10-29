@@ -29,4 +29,4 @@ if err != nil {
 
 ## Reference
 
-For comprehensive Go idioms, the local ECC clone (everything-claude-code) ships `skills/golang-patterns/`.
+See skill: `golang-patterns` for comprehensive Go idioms and patterns.

@@ -42,4 +42,4 @@ func NewUserService(repo UserRepository, logger Logger) *UserService {
 
 ## Reference
 
-For comprehensive Go patterns (concurrency, error handling, packaging), the local ECC clone (everything-claude-code) ships `skills/golang-patterns/`.
+See skill: `golang-patterns` for comprehensive Go patterns including concurrency, error handling, and package organization.

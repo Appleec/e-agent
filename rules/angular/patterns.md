@@ -246,4 +246,4 @@ Use Angular CDK for headless, accessible components (Accordion, Listbox, Combobo
 
 ## Skill Reference
 
-For deep guidance on signals, forms, routing, DI, SSR, and accessibility, the local ECC clone (everything-claude-code) ships `skills/angular-developer/`.
+See skill: `angular-developer` for deep guidance on signals, forms, routing, DI, SSR, and accessibility patterns.
