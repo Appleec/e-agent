@@ -45,7 +45,7 @@ rules/
 ## Rules vs Skills
 
 - **Rules** define standards, conventions, and checklists that apply broadly (e.g., "80% test coverage", "no hardcoded secrets").
-- **Skills** (`skills/`) provide deep, actionable reference material for specific tasks (e.g., `tdd`, `typescript-strict`, `security-checklist`).
+- **Skills** (`skills/`) provide deep, actionable reference material for specific tasks (e.g., `tdd`, `typescript-strict`, `security-review`).
 
 Language-specific rule files reference relevant skills where appropriate. Rules tell you _what_ to do; skills tell you _how_ to do it.
 

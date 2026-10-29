@@ -180,5 +180,5 @@ FAIL: "Score: 3. I don't like Python decorators."
 ## Related Skills
 
 - `verification-loop` — Systematic verification of outputs against expected results
-- `security-checklist` — Security-focused review checklist
+- `security-review` — Security-focused review checklist and patterns
 - `agent-evaluator` agent — delegated evaluation with read-only Bash verification

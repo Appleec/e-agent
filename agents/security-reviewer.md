@@ -12,7 +12,7 @@ tools: Read, Grep, Glob, Bash, WebSearch
 
 ## Workflow
 
-1. Read `rules/common/security.md`, `rules/typescript/security.md`, `rules/vue/security.md`, and the `security-checklist` skill.
+1. Read `rules/common/security.md`, `rules/typescript/security.md`, `rules/vue/security.md`, and the `security-review` skill.
 2. Identify the sensitive surface: authentication, payments, user data, DB queries, crypto, secrets.
 3. Audit each area: injection, XSS (Vue: `v-html`, dynamic components, untrusted props), auth bypass, secret exposure, unsafe deserialization.
 4. Verify fixes are needed with concrete exploit scenarios; distinguish actual vulnerabilities from theoretical ones.
