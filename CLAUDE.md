@@ -7,8 +7,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 e-agent is a personal, general-purpose agent harness: a language-agnostic core that installs into any project. Read `SOUL.md` first — it is the core identity and the five principles.
 
 - **Agents**: `agents/` — 29 specialists, invoked via the Agent tool
-- **Skills**: `skills/` — 46 skills, invoked via the Skill tool
-- **Commands**: `commands/` — 24 slash commands (workflow: `plan`/`plan-prd`/`pr` suite incl. PRP series; review: `code-review`, `review-pr`, `vue-review`, `python-review`; quality: `build-fix`, `refactor-clean`, `checkpoint`; session: `save-session`, `resume-session`; utility: `aside`, `feature-dev`, `learn`, `learn-eval`, `marketing-campaign`, `skill-create`, `update-docs`), invoked via `/e-agent:<name>`
+- **Skills**: `skills/` — 48 skills, invoked via the Skill tool
+- **Commands**: `commands/` — 25 slash commands (workflow: `plan`/`plan-prd`/`pr` suite incl. PRP series; review: `code-review`, `review-pr`, `vue-review`, `python-review`, `issue-review`; quality: `build-fix`, `refactor-clean`, `checkpoint`; session: `save-session`, `resume-session`; utility: `aside`, `feature-dev`, `learn`, `learn-eval`, `marketing-campaign`, `skill-create`, `update-docs`), invoked via `/e-agent:<name>`
 - **Rules**: `rules/` — layered standards (common → typescript → vue)
 - **Contexts**: `contexts/` — dev / review / research modes
 - **Memory**: `memory/` — persistent progress, decisions, learnings
@@ -96,12 +96,12 @@ Rules are layered standards under `rules/`: `common/` (language-agnostic) plus p
 
 ## Skills System
 
-46 skills in `skills/`:
+48 skills in `skills/`:
 
 - **Workflow & meta**: dev-team, council, git-workflow, skill-creator, find-skills, karpathy-guidelines, search-first, ub-mode, inherit-legacy-style, parallel-execution-optimizer
-- **TDD & quality**: tdd, code-review-checklist, refactor-cleanup, e2e-testing, verification-loop, conventional-commit-review, agent-self-evaluation
+- **TDD & quality**: tdd, code-review-checklist, issue-review, refactor-cleanup, e2e-testing, verification-loop, conventional-commit-review, agent-self-evaluation
 - **Vue & frontend**: vue-best-practices, vue-patterns, nuxt4-patterns, vite-patterns, frontend-design, frontend-patterns, agent-browser, jishi-mcp (design-to-code via JiShi Design), ui-to-vue, accessibility, design-system, seo, angular-developer
-- **TypeScript & backend**: typescript-strict, error-handling, api-design, python-patterns, python-testing, fastapi-patterns, github-ops, mcp-server-patterns, golang-patterns, golang-testing
+- **TypeScript & backend**: typescript-strict, typescript-patterns, error-handling, api-design, python-patterns, python-testing, fastapi-patterns, github-ops, mcp-server-patterns, golang-patterns, golang-testing
 - **Security & docs**: security-review, docs-memory, documentation-lookup, mcp-dependency-review
 - **Context & utility**: token-budget-advisor, prompt-caching-strategy
 

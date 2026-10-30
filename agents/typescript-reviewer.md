@@ -60,6 +60,10 @@ tools: Read, Grep, Glob, Bash
 
 - `console.log` in production code; magic numbers; deep optional chaining without fallback (`a?.b?.c ?? fallback`); inconsistent naming (camelCase vars, PascalCase types)
 
+## Reference
+
+For the detailed patterns behind these checks — type design, narrowing, async concurrency, module boundaries, type-level testing — use the `typescript-patterns` skill; `rules/typescript/` holds the enforced standard.
+
 ## Output / Exit Criteria
 
 - Findings grouped CRITICAL → MEDIUM, each with file:line, issue, why, concrete fix.

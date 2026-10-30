@@ -99,6 +99,20 @@ The five v0.2.24–v0.2.28 batches committed to develop as `7f09cb5` (60 files, 
 
 `mcp-configs/mcp-servers.json` confirmed as keep and committed as `94efe3c` "chore: expand MCP server catalog" (+54 lines: 9 opt-in entries — memory, longhand, filesystem, token-optimizer, firecrawl, sequential-thinking, codescene, laraplugins, evalview — all credential slots as `YOUR_*` placeholders); followed by `3f828b2` "docs: record 7f09cb5 in progress memory". Working tree clean as of `3f828b2` — only the progress.md edits from this memory-keeper pass remain uncommitted, riding along with the next commit by convention.
 
+## 2026-10-30 / memory-keeper / done — v0.2.39
+
+Synced the first batch of ECC updates (P0 + P1). ECC local baseline: `b38be6a7` (VERSION 2.2.3, 2026-10-29 20:06 -0700) — later sync passes should record and reuse this SHA for comparison.
+
+P0 additions: `skills/typescript-patterns/SKILL.md` (592 lines, ported from ECC; origin changed to `ported-from-ECC`; `rules/ecc/typescript/...` paths rewritten to `rules/typescript/...`; Related list drops nestjs-patterns / prisma-patterns which do not exist in e-agent). `skills/issue-review/SKILL.md` (313 lines) plus `commands/issue-review.md` (63 lines); all `/code-review` references unified to `/e-agent:code-review`; Related drops the nonexistent `project-flow-ops` and keeps `github-ops`. `agents/typescript-reviewer.md` gains a Reference section pointing at `typescript-patterns` and `rules/typescript/`.
+
+P1 upstream fix sync: `skills/golang-patterns/SKILL.md` (sync.Pool `buf.Bytes()` aliasing fix, now uses `bytes.Clone`); `skills/verification-loop/SKILL.md` (new Target Acceptance section, report gains Target / Next permitted step fields; e-agent's own Phase 0 and quick/full modes preserved); `skills/parallel-execution-optimizer/SKILL.md` (new Bounded Homogeneous Work section, ~100 lines, description synced; e-agent's `allowed-tools` frontmatter convention preserved).
+
+Counts and listings: skills 46 → 48, commands 24 → 25, agents unchanged at 29; all four manifests bumped to 0.2.39; CLAUDE.md skill categories and command groups updated; `agent.yaml` skills list +2.
+
+Verification: `claude plugin validate .` passed; `claude plugin update e-agent@e-agent` moved 0.2.38 → 0.2.39; cache `~/.claude/plugins/cache/e-agent/e-agent/0.2.39/` confirmed agents=29, skills=48, commands=25, with the new files and origin markers present.
+
+Status: not committed, awaiting user decision (working tree holds 9 modified tracked files + 3 new paths).
+
 
 
 
