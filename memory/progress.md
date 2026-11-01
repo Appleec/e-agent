@@ -113,6 +113,44 @@ Verification: `claude plugin validate .` passed; `claude plugin update e-agent@e
 
 Status: not committed, awaiting user decision (working tree holds 9 modified tracked files + 3 new paths).
 
+## 2026-11-01 / memory-keeper / done — v0.2.40
+
+Tier 1 port after the ECC agents evaluation. ECC baseline remains `b38be6a7`. Of the 26 agents shared with ECC, only `typescript-reviewer` had upstream changes since the last port (already synced in v0.2.39); the rest needed no update.
+
+Three new agents (29 → 32):
+- `agents/comment-analyzer.md` (54 lines, Read/Grep/Glob, no external dependencies; fills the only agent gap left in /review-pr).
+- `agents/go-reviewer.md` (85 lines; pairs with `rules/golang/` + `golang-patterns` / `golang-testing`; the `golang-patterns` reference now points at the local `skills/golang-patterns/SKILL.md`).
+- `agents/react-reviewer.md` (167 lines; pairs with `rules/react/` and divides lanes with `typescript-reviewer`; Related drops the nonexistent `react-patterns` / `react-testing` skills and `/react-*` commands in favor of `rules/react/`, `frontend-patterns`, `accessibility`, with the remainder pointing at the local ECC clone).
+
+Uniform adaptations: ECC's 8-line Prompt Defense compressed to e-agent's 3-line guardrails form (pointing to `rules/common/security.md`); `model:` / `color:` frontmatter removed; an "Adapted from ECC" provenance line added to each agent.
+
+`commands/review-pr.md`: `comment-analyzer` restored to the agent list (7 → 8), description and provenance note synced (the old "Only ECC's comment-analyzer has no e-agent equivalent" comment is updated).
+
+Roster synced in three places: CLAUDE.md, SOUL.md, and `rules/common/agents.md` each gain comment-analyzer / react-reviewer / go-reviewer lines; CLAUDE.md agents count 29 → 32; all four manifests bumped to 0.2.40, with the plugin.json / marketplace.json descriptions reading "32 agents".
+
+Tier 2 (database-reviewer / django-reviewer / marketing-agent) plus the language reviewers and the runtime/hook-dependent agents were not ported; the rationale is recorded in that pass's analysis.
+
+Verification: `claude plugin validate .` passed; `claude plugin update e-agent@e-agent` moved 0.2.39 → 0.2.40; cache `~/.claude/plugins/cache/e-agent/e-agent/0.2.40/` confirmed agents=32, skills=48, commands=25, with the three new agents and the review-pr update present.
+
+Status: not committed, awaiting user decision (working tree holds 8 modified tracked files + 3 new agent files).
+
+## 2026-11-01 / memory-keeper / done — v0.2.41
+
+React suite port. Pre-check first: `build-error-resolver` in e-agent is byte-for-byte identical to ECC's current version (the full version restored in v0.2.27), and ECC has not touched it since 2026-07-26; the only divergences are the three agreed conventions — e-agent omits `model: sonnet`, uses the 3-line compressed Prompt Defense, and adds an ECC provenance line. Therefore `react-build-resolver` is a React-build-system-specific extension, not a duplicate of the general resolver.
+
+Ported the React suite (ECC baseline remains `b38be6a7`):
+- New skills: `react-patterns` (342 lines), `react-testing` (424 lines), `react-performance` (575 lines, derived from Vercel react-best-practices). Origin uniformly changed to `ported-from-ECC`; `tdd-workflow` references mapped to e-agent's `tdd`; `react-performance`'s dangling `nextjs-turbopack` reference deleted; `react-patterns`'s stale "react-native-patterns (not present yet)" note now points at `rules/react-native/` with instructions to copy from the local ECC clone when needed.
+- New commands: `react-review` (170 lines), `react-test` (265 lines), `react-build` (187 lines). `/code-review` → `/e-agent:code-review`; `/build-fix` → `/e-agent:build-fix`; `tdd-workflow` → `tdd`.
+- New agent: `react-build-resolver` (215 lines); compressed Prompt Defense, `model:` removed, ECC provenance line added.
+
+Counts: agents 32 → 33, skills 48 → 51, commands 25 → 28; the roster gains `react-build-resolver` in all three places (CLAUDE.md / SOUL.md / `rules/common/agents.md`); CLAUDE.md skill categories now read "Vue / React & frontend" with the 3 React skills added; command groups gain react-review (review) and react-build / react-test (quality); `agent.yaml` skills list +3; all four manifests unified at 0.2.41, with the plugin.json / marketplace.json descriptions reading "33 agents, 51 skills, 28 commands".
+
+Not ported: `react-native-patterns` (326 lines) — deferred until an RN need is concrete.
+
+Verification: `claude plugin validate .` passed; `claude plugin update e-agent@e-agent` moved 0.2.40 → 0.2.41; cache `~/.claude/plugins/cache/e-agent/e-agent/0.2.41/` confirmed agents=33, skills=51, commands=28, with all 7 new files present.
+
+Status: not committed, awaiting user decision (working tree holds modified tracked files + new React assets).
+
 
 
 

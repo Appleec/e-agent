@@ -12,12 +12,15 @@ e-agent agents live in `agents/` and are invoked through the Agent tool. When th
 | tdd-guide | Test-driven development | New features, bug fixes |
 | implementer | Minimal implementation to green | After RED tests |
 | code-reviewer | Code review | After writing code |
+| comment-analyzer | Comment accuracy/completeness review | Comment and docstring review |
 | typescript-reviewer | TS/JS review (type safety, async, Node security) | TS/JS diffs |
 | vue-reviewer | Vue review (reactivity, template security, composables) | .vue / Vue ecosystem diffs |
+| react-reviewer | React/JSX review (hooks, RSC, a11y, render perf) | .tsx / .jsx diffs |
 | type-design-analyzer | Deep type design review | Domain models, API contracts |
 | code-simplifier | Behavior-preserving simplification | REFACTOR phase |
 | security-reviewer | Security analysis | Before committing sensitive code |
 | build-error-resolver | Fix typecheck/lint/test failures | When checks fail |
+| react-build-resolver | Fix React build/bundler/hydration failures | When a React build fails |
 | commit-reviewer | Conventional Commits message drafting | Before committing |
 | memory-keeper | Persist progress/decisions/learnings | After verify |
 | architect | System design, scalability, trade-offs | Architectural decisions |
@@ -28,6 +31,7 @@ e-agent agents live in `agents/` and are invoked through the Agent tool. When th
 | performance-optimizer | Bottlenecks, bundles, memory leaks | Slow code, size regressions |
 | refactor-cleaner | Dead code removal and consolidation | Cleanup phases |
 | python-reviewer | Python review (PEP 8, security) | Python diffs |
+| go-reviewer | Go review (concurrency, errors, idioms) | Go diffs |
 | fastapi-reviewer | FastAPI review (async, DI, Pydantic) | FastAPI apps |
 | e2e-runner | E2E journeys, flaky quarantine | E2E test work |
 | docs-lookup | Library docs via Context7 MCP | Docs/API questions |

@@ -6,9 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 e-agent is a personal, general-purpose agent harness: a language-agnostic core that installs into any project. Read `SOUL.md` first — it is the core identity and the five principles.
 
-- **Agents**: `agents/` — 29 specialists, invoked via the Agent tool
-- **Skills**: `skills/` — 48 skills, invoked via the Skill tool
-- **Commands**: `commands/` — 25 slash commands (workflow: `plan`/`plan-prd`/`pr` suite incl. PRP series; review: `code-review`, `review-pr`, `vue-review`, `python-review`, `issue-review`; quality: `build-fix`, `refactor-clean`, `checkpoint`; session: `save-session`, `resume-session`; utility: `aside`, `feature-dev`, `learn`, `learn-eval`, `marketing-campaign`, `skill-create`, `update-docs`), invoked via `/e-agent:<name>`
+- **Agents**: `agents/` — 33 specialists, invoked via the Agent tool
+- **Skills**: `skills/` — 51 skills, invoked via the Skill tool
+- **Commands**: `commands/` — 28 slash commands (workflow: `plan`/`plan-prd`/`pr` suite incl. PRP series; review: `code-review`, `review-pr`, `vue-review`, `python-review`, `issue-review`, `react-review`; quality: `build-fix`, `react-build`, `react-test`, `refactor-clean`, `checkpoint`; session: `save-session`, `resume-session`; utility: `aside`, `feature-dev`, `learn`, `learn-eval`, `marketing-campaign`, `skill-create`, `update-docs`), invoked via `/e-agent:<name>`
 - **Rules**: `rules/` — layered standards (common → typescript → vue)
 - **Contexts**: `contexts/` — dev / review / research modes
 - **Memory**: `memory/` — persistent progress, decisions, learnings
@@ -96,11 +96,11 @@ Rules are layered standards under `rules/`: `common/` (language-agnostic) plus p
 
 ## Skills System
 
-48 skills in `skills/`:
+51 skills in `skills/`:
 
 - **Workflow & meta**: dev-team, council, git-workflow, skill-creator, find-skills, karpathy-guidelines, search-first, ub-mode, inherit-legacy-style, parallel-execution-optimizer
 - **TDD & quality**: tdd, code-review-checklist, issue-review, refactor-cleanup, e2e-testing, verification-loop, conventional-commit-review, agent-self-evaluation
-- **Vue & frontend**: vue-best-practices, vue-patterns, nuxt4-patterns, vite-patterns, frontend-design, frontend-patterns, agent-browser, jishi-mcp (design-to-code via JiShi Design), ui-to-vue, accessibility, design-system, seo, angular-developer
+- **Vue / React & frontend**: vue-best-practices, vue-patterns, nuxt4-patterns, vite-patterns, frontend-design, frontend-patterns, react-patterns, react-testing, react-performance, agent-browser, jishi-mcp (design-to-code via JiShi Design), ui-to-vue, accessibility, design-system, seo, angular-developer
 - **TypeScript & backend**: typescript-strict, typescript-patterns, error-handling, api-design, python-patterns, python-testing, fastapi-patterns, github-ops, mcp-server-patterns, golang-patterns, golang-testing
 - **Security & docs**: security-review, docs-memory, documentation-lookup, mcp-dependency-review
 - **Context & utility**: token-budget-advisor, prompt-caching-strategy
@@ -119,12 +119,15 @@ Development follows the core loop (see `SOUL.md` §2). Delegate to the right age
 | tdd-guide | New features / bug fixes — write failing tests first |
 | implementer | After RED — minimal code to make tests green |
 | code-reviewer | Immediately after writing code (general) |
+| comment-analyzer | Comment accuracy, completeness, and rot risk |
 | typescript-reviewer | TS/JS diffs — type safety, async, Node security |
 | vue-reviewer | `.vue` / Vue ecosystem diffs — reactivity, template security, composables |
+| react-reviewer | React/JSX diffs — hooks, RSC boundaries, a11y, render performance |
 | type-design-analyzer | Deep type reviews — make illegal states unrepresentable |
 | code-simplifier | REFACTOR phase — simplify while preserving behavior exactly |
 | security-reviewer | Before committing sensitive code (auth, payments, user data, DB, crypto) |
 | build-error-resolver | When typecheck / lint / test fail |
+| react-build-resolver | React build/bundler/hydration failures — Vite, webpack, Next, CRA, Parcel, esbuild, Bun |
 | commit-reviewer | Before committing — draft/check the Conventional Commits message |
 | memory-keeper | After verify — persist progress, decisions, learnings |
 | architect | System design, scalability, trade-off analysis |
@@ -135,6 +138,7 @@ Development follows the core loop (see `SOUL.md` §2). Delegate to the right age
 | performance-optimizer | Bottlenecks, bundle size, memory leaks |
 | refactor-cleaner | Dead code removal and consolidation |
 | python-reviewer | Python diffs — PEP 8, security, Pythonic idioms |
+| go-reviewer | Go diffs — concurrency, error handling, idiomatic patterns |
 | fastapi-reviewer | FastAPI apps — async, DI, Pydantic, OpenAPI |
 | e2e-runner | E2E journeys, flaky quarantine, artifact management |
 | docs-lookup | Library docs via Context7 MCP (opt-in) |

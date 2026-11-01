@@ -47,12 +47,15 @@ Agents live in `agents/` and are invoked through the Agent tool. When installed 
 | `tdd-guide` | Write failing tests first | New features, bug fixes |
 | `implementer` | Minimal implementation to make tests green | After RED |
 | `code-reviewer` | Quality, correctness, and convention review | Immediately after writing code |
+| `comment-analyzer` | Comment accuracy, completeness, and rot risk | Reviewing comments/docstrings in a diff |
 | `typescript-reviewer` | TS/JS review — type safety, async, Node security | TS/JS diffs; pairs with vue-reviewer on `.vue` |
 | `vue-reviewer` | Vue review — reactivity, template security, composables | `.vue` / Vue ecosystem diffs |
+| `react-reviewer` | React/JSX review — hooks, RSC boundaries, a11y, render perf | `.tsx` / `.jsx` diffs; pairs with typescript-reviewer |
 | `type-design-analyzer` | Evaluate whether types make illegal states unrepresentable | Deep type reviews of domain models and API contracts (typed stacks) |
 | `code-simplifier` | Simplify code while preserving behavior exactly | REFACTOR phase, after tests are green |
 | `security-reviewer` | Security review of sensitive code | Before committing auth/payment/data/crypto code |
 | `build-error-resolver` | Repair typecheck / lint / test failures | When checks fail |
+| `react-build-resolver` | Repair React build/bundler/hydration failures | When a React build fails |
 | `commit-reviewer` | Draft/check Conventional Commits messages from the staged diff | Before committing |
 | `memory-keeper` | Persist progress, decisions, and learnings | After verify, at loop end |
 | `architect` | System design, scalability, trade-off analysis | Architectural decisions, large refactors |
@@ -63,6 +66,7 @@ Agents live in `agents/` and are invoked through the Agent tool. When installed 
 | `performance-optimizer` | Bottlenecks, bundles, memory leaks | Slow code, size regressions |
 | `refactor-cleaner` | Dead code removal and consolidation | Cleanup phases |
 | `python-reviewer` | Python review — PEP 8, security, Pythonic | Python diffs |
+| `go-reviewer` | Go review — concurrency, errors, idiomatic patterns | Go diffs |
 | `fastapi-reviewer` | FastAPI review — async, DI, Pydantic | FastAPI apps |
 | `e2e-runner` | E2E journeys, flaky quarantine, artifacts | E2E test creation/maintenance |
 | `docs-lookup` | Library docs via Context7 MCP | "How do I use X" questions |
