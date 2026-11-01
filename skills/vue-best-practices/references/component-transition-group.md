@@ -77,9 +77,7 @@ Keys are required. Without stable keys, Vue cannot track item positions and anim
 ```vue
 <template>
   <TransitionGroup name="list" tag="div" mode="out-in">
-    <div v-for="item in items" :key="item.id">
-      {{ item.name }}
-    </div>
+    <div v-for="item in items" :key="item.id">{{ item.name }}</div>
   </TransitionGroup>
 </template>
 ```

@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 e-agent is a personal, general-purpose agent harness: a language-agnostic core that installs into any project. Read `SOUL.md` first — it is the core identity and the five principles.
 
 - **Agents**: `agents/` — 33 specialists, invoked via the Agent tool
-- **Skills**: `skills/` — 51 skills, invoked via the Skill tool
+- **Skills**: `skills/` — 58 skills, invoked via the Skill tool
 - **Commands**: `commands/` — 28 slash commands (workflow: `plan`/`plan-prd`/`pr` suite incl. PRP series; review: `code-review`, `review-pr`, `vue-review`, `python-review`, `issue-review`, `react-review`; quality: `build-fix`, `react-build`, `react-test`, `refactor-clean`, `checkpoint`; session: `save-session`, `resume-session`; utility: `aside`, `feature-dev`, `learn`, `learn-eval`, `marketing-campaign`, `skill-create`, `update-docs`), invoked via `/e-agent:<name>`
 - **Rules**: `rules/` — layered standards (common → typescript → vue)
 - **Contexts**: `contexts/` — dev / review / research modes
@@ -96,11 +96,11 @@ Rules are layered standards under `rules/`: `common/` (language-agnostic) plus p
 
 ## Skills System
 
-51 skills in `skills/`:
+58 skills in `skills/`:
 
 - **Workflow & meta**: dev-team, council, git-workflow, skill-creator, find-skills, karpathy-guidelines, search-first, ub-mode, inherit-legacy-style, parallel-execution-optimizer
 - **TDD & quality**: tdd, code-review-checklist, issue-review, refactor-cleanup, e2e-testing, verification-loop, conventional-commit-review, agent-self-evaluation
-- **Vue / React & frontend**: vue-best-practices, vue-patterns, nuxt4-patterns, vite-patterns, frontend-design, frontend-patterns, react-patterns, react-testing, react-performance, agent-browser, jishi-mcp (design-to-code via JiShi Design), ui-to-vue, accessibility, design-system, seo, angular-developer
+- **Vue / React & frontend**: vue-best-practices, vue-patterns, vue-debug-guides, vue-jsx-best-practices, vue-options-api-best-practices, vue-pinia-best-practices, vue-router-best-practices, vue-testing-best-practices, create-adaptable-composable, nuxt4-patterns, vite-patterns, frontend-design, frontend-patterns, react-patterns, react-testing, react-performance, agent-browser, jishi-mcp (design-to-code via JiShi Design), ui-to-vue, accessibility, design-system, seo, angular-developer
 - **TypeScript & backend**: typescript-strict, typescript-patterns, error-handling, api-design, python-patterns, python-testing, fastapi-patterns, github-ops, mcp-server-patterns, golang-patterns, golang-testing
 - **Security & docs**: security-review, docs-memory, documentation-lookup, mcp-dependency-review
 - **Context & utility**: token-budget-advisor, prompt-caching-strategy

@@ -151,6 +151,38 @@ Verification: `claude plugin validate .` passed; `claude plugin update e-agent@e
 
 Status: not committed, awaiting user decision (working tree holds modified tracked files + new React assets).
 
+## 2026-11-01 / memory-keeper / done — v0.2.42
+
+Synced `skills/vue-best-practices` to the upstream latest release. Upstream repo: `github.com/vuejs-ai/skills` (default branch `main`). This is a content sync of vendored skill files — no porting adaptations, no new skills/agents/commands.
+
+Baselines: old SHA `f3dd1bf4d3ac78331bdc903e4519d561c538ca6a` (2026-02-10, skill version 18.0.0) → new SHA `198f0cd8f7f9c0a3d9b566ccc16de6677519ee78` (2026-10-23, skill version 19.1.0).
+
+Scope: `SKILL.md` plus `references/` — 24 files updated (+389/-444). `LICENSE.md` is hash-identical to the upstream root LICENSE and was left unchanged. `SYNC.md` updated with the new SHA, `Synced 2026-11-01`, and `Upstream version 19.1.0`.
+
+Upstream's main change: the component-boundary and composable-extraction criteria were rewritten — the old heuristics (file length / number of UI blocks / reuse) are replaced by responsibility cohesion and contract hiding. Data-flow, state-ownership, SFC, and performance reference docs were updated to match.
+
+Verification: after sync, local vs upstream differs only in `SYNC.md` (local metadata) and `LICENSE.md` (same content as the upstream root license); every Markdown link inside the skill resolves; frontmatter parses cleanly (name=vue-best-practices, version=19.1.0).
+
+Version: all four manifests bumped to 0.2.42 (counts unchanged: 33 agents / 51 skills / 28 commands). `claude plugin validate .` passed; `claude plugin update e-agent@e-agent` moved 0.2.41 → 0.2.42; cache `~/.claude/plugins/cache/e-agent/e-agent/0.2.42/skills/vue-best-practices` matches the repo file by file.
+
+Status: not committed, awaiting user decision.
+
+Note: the previously discussed plugin rename to `eac@eac` (commands `/eac:xxx`) has not been carried out and still awaits user confirmation.
+
+## 2026-11-01 / memory-keeper / done — v0.2.43
+
+Completed the same upstream set: the remaining 7 Vue skills from `github.com/vuejs-ai/skills` (SHA `198f0cd8f7f9c0a3d9b566ccc16de6677519ee78`). These directories appeared in the workspace after the v0.2.42 sync and are byte-identical to upstream file by file; this pass brings them into versioning and the commit scope.
+
+New skills: `create-adaptable-composable`, `vue-debug-guides`, `vue-jsx-best-practices`, `vue-options-api-best-practices`, `vue-pinia-best-practices`, `vue-router-best-practices`, `vue-testing-best-practices`. All are verbatim upstream copies with no local adaptation; none carry a `SYNC.md` (only `vue-best-practices` keeps sync metadata).
+
+Verification: frontmatter parses for all 7 skills and names are unique; every internal Markdown link resolves; `diff -rq` against the corresponding upstream directories reports no differences.
+
+Counts: skills 51 → 58; agents 33 and commands 28 unchanged. CLAUDE.md skill categories, the `agent.yaml` skills list, and the plugin.json / marketplace.json descriptions synced to "33 agents, 58 skills, 28 commands".
+
+Version: all four manifests unified at 0.2.43. `claude plugin validate .` passed; `claude plugin update e-agent@e-agent` moved 0.2.42 → 0.2.43; cache `~/.claude/plugins/cache/e-agent/e-agent/0.2.43/` confirmed skills=58, agents=33, commands=28, with all 7 new skills present.
+
+Status: to be committed together with the v0.2.42 `vue-best-practices` sync (git commit pending).
+
 
 
 

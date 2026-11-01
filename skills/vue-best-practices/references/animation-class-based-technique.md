@@ -44,16 +44,14 @@ function submitForm() {
     // Auto-remove class after animation completes
     setTimeout(() => {
       showError.value = false
-    }, 820) // Match animation duration
+    }, 820)  // Match animation duration
   }
 }
 </script>
 
 <template>
   <div :class="{ shake: showError }">
-    <button @click="submitForm">
-      Submit
-    </button>
+    <button @click="submitForm">Submit</button>
     <span v-if="showError">This feature is disabled!</span>
   </div>
 </template>
@@ -92,8 +90,8 @@ async function save() {
 
 <template>
   <button
-    :class="{ pulse: saved }"
     @click="save"
+    :class="{ pulse: saved }"
   >
     {{ saved ? 'Saved!' : 'Save' }}
   </button>

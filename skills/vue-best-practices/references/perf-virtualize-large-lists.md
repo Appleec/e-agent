@@ -32,8 +32,7 @@ Use a virtualization library when dealing with lists that could exceed 50-100 it
 **BAD:**
 ```vue
 <script setup>
-import { onMounted, ref } from 'vue'
-
+import { ref, onMounted } from 'vue'
 import UserCard from './UserCard.vue'
 
 const users = ref([])
@@ -59,12 +58,10 @@ onMounted(async () => {
 **GOOD:**
 ```vue
 <script setup>
-import { onMounted, ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { RecycleScroller } from 'vue-virtual-scroller'
-
-import UserCard from './UserCard.vue'
-
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
+import UserCard from './UserCard.vue'
 
 const users = ref([])
 
@@ -77,11 +74,11 @@ onMounted(async () => {
 <template>
   <!-- GOOD: Only renders ~20 visible items at a time -->
   <RecycleScroller
-    v-slot="{ item }"
     class="user-list"
     :items="users"
     :item-size="80"
     key-field="id"
+    v-slot="{ item }"
   >
     <UserCard :user="item" />
   </RecycleScroller>
@@ -98,8 +95,8 @@ onMounted(async () => {
 
 ```vue
 <script setup>
-import { useVirtualizer } from '@tanstack/vue-virtual'
 import { ref } from 'vue'
+import { useVirtualizer } from '@tanstack/vue-virtual'
 
 const users = ref([/* 10,000 users */])
 const parentRef = ref(null)
@@ -107,8 +104,8 @@ const parentRef = ref(null)
 const rowVirtualizer = useVirtualizer({
   count: users.value.length,
   getScrollElement: () => parentRef.value,
-  estimateSize: () => 80, // Estimated row height
-  overscan: 5 // Render 5 extra items above/below viewport
+  estimateSize: () => 80,  // Estimated row height
+  overscan: 5  // Render 5 extra items above/below viewport
 })
 </script>
 
@@ -117,7 +114,7 @@ const rowVirtualizer = useVirtualizer({
     <div
       :style="{
         height: `${rowVirtualizer.getTotalSize()}px`,
-        position: 'relative',
+        position: 'relative'
       }"
     >
       <div
@@ -129,7 +126,7 @@ const rowVirtualizer = useVirtualizer({
           left: 0,
           width: '100%',
           height: `${virtualRow.size}px`,
-          transform: `translateY(${virtualRow.start}px)`,
+          transform: `translateY(${virtualRow.start}px)`
         }"
       >
         <UserCard :user="users[virtualRow.index]" />

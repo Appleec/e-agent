@@ -34,9 +34,9 @@ function onMousemove(e) {
 
 <template>
   <div
+    @mousemove="onMousemove"
     :style="{ backgroundColor: `hsl(${hue}, 80%, 50%)` }"
     class="interactive-area"
-    @mousemove="onMousemove"
   >
     <p>Move your mouse across this div...</p>
     <p>Hue: {{ hue }}</p>
@@ -81,7 +81,7 @@ function onMousemove(e) {
     <div
       class="follower"
       :style="{
-        transform: `translate(${x}px, ${y}px)`,
+        transform: `translate(${x}px, ${y}px)`
       }"
     />
   </div>
@@ -124,11 +124,11 @@ const progress = ref(0)
     />
   </div>
   <input
-    v-model.number="progress"
     type="range"
+    v-model.number="progress"
     min="0"
     max="100"
-  >
+  />
 </template>
 
 <style>
@@ -151,7 +151,7 @@ const progress = ref(0)
 
 ```vue
 <script setup>
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const scrollY = ref(0)
 
@@ -160,7 +160,7 @@ const heroOpacity = computed(() => {
 })
 
 const scrollOffset = computed(() => {
-  return scrollY.value * 0.5 // Parallax effect
+  return scrollY.value * 0.5  // Parallax effect
 })
 
 function handleScroll() {
@@ -181,7 +181,7 @@ onUnmounted(() => {
     class="hero"
     :style="{
       opacity: heroOpacity,
-      transform: `translateY(${scrollOffset}px)`,
+      transform: `translateY(${scrollOffset}px)`
     }"
   >
     <h1>Scroll Down</h1>
@@ -203,15 +203,15 @@ onUnmounted(() => {
 
 ```vue
 <script setup>
-import { computed, ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const isDark = ref(false)
 
 const themeStyles = computed(() => ({
   '--bg-color': isDark.value ? '#1a1a1a' : '#ffffff',
   '--text-color': isDark.value ? '#ffffff' : '#1a1a1a',
-  'backgroundColor': 'var(--bg-color)',
-  'color': 'var(--text-color)'
+  backgroundColor: 'var(--bg-color)',
+  color: 'var(--text-color)'
 }))
 
 function toggleTheme() {
@@ -224,9 +224,7 @@ function toggleTheme() {
     class="app"
     :style="themeStyles"
   >
-    <button @click="toggleTheme">
-      Toggle Theme
-    </button>
+    <button @click="toggleTheme">Toggle Theme</button>
     <p>Current theme: {{ isDark ? 'Dark' : 'Light' }}</p>
   </div>
 </template>
@@ -245,9 +243,8 @@ For smooth number animations (counters, stats), use watchers with animation libr
 
 ```vue
 <script setup>
+import { computed, ref, reactive, watch } from 'vue'
 import gsap from 'gsap'
-
-import { computed, reactive, ref, watch } from 'vue'
 
 const targetNumber = ref(0)
 const tweened = reactive({ value: 0 })
@@ -266,10 +263,8 @@ watch(targetNumber, (newValue) => {
 
 <template>
   <div>
-    <input v-model.number="targetNumber" type="number">
-    <p class="counter">
-      {{ displayNumber.toFixed(0) }}
-    </p>
+    <input v-model.number="targetNumber" type="number" />
+    <p class="counter">{{ displayNumber.toFixed(0) }}</p>
   </div>
 </template>
 ```
